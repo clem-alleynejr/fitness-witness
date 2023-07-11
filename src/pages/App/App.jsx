@@ -1,10 +1,18 @@
 import { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service'
 import './App.css';
+import HomePage from '../HomePage/HomePage';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import WorkoutsListPage from '../WorkoutsListPage/WorkoutsListPage';
+import NewWorkoutPage from '../NewWorkoutPage/NewWorkoutPage';
+import WorkoutDetailPage from '../WorkoutDetailPage/WorkoutDetailPage';
+import CalendarSchedulePage from '../CalendarSchedulePage/CalendarSchedulePage';
+import WorkoutOfDayPage from '../WorkoutOfdayPage/WorkoutOfDayPage';
+import ListSchedulePage from '../ListSchedulePage/ListSchedulePage';
+import NewWorkoutOfDayPage from '../NewWorkoutOfDayPage/NewWorkoutOfDayPage';
+
+
 import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
