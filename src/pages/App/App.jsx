@@ -12,18 +12,22 @@ export default function App() {
 
   return (
     <main className="App">
-      { user ?
-          <>
             <NavBar user={user} setUser={setUser} />
             <Routes>
-              {/* Route components in here */}
-              <Route path="/orders/new" element={<NewOrderPage />} />
-              <Route path="/orders" element={<OrderHistoryPage />} />
+              <Route path="/" element={<HomePage />} />
+              <Route path="/auth" element={<AuthPage />} setUser={setUser}/>
+
+              <Route path="/workouts" element={<WorkoutsListPage />} />
+              <Route path="/workouts/new" element={<NewWorkoutPage/>} />
+              <Route path="/workouts/:workoutName" element={<WorkoutDetailPage />} />
+
+              <Route path="/workouts-of-days/calendar-schedule" element={<CalendarSchedulePage />} />
+              <Route path="/workouts-of-days/calendar-schedule/:date" element={<WorkoutOfDayPage />} />
+              <Route path="/workouts-of-days/list-schedule" element={<ListSchedulePage />} /> 
+              <Route path="/workouts-of-days/new" element={<NewWorkoutOfDayPage />} />
+
+              <Route path="/*" element={<Navigate to="/" />} />
             </Routes>
-          </>
-          :
-          <AuthPage setUser={setUser}/>
-      }
     </main>
   );
 }
