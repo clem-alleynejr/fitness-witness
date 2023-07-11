@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
     create,
-    checkToken,
     login
 };
 
@@ -43,10 +42,4 @@ function createJWT(user) {
     process.env.SECRET,
     { expiresIn: '24h' }        
     )
-}
-
-function checkToken(req, res) {
-  // Verify middleware is doing its job
-  console.log('req.user', req.user);
-  res.json(req.exp);    
 }
