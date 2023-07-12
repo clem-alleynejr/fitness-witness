@@ -20,22 +20,36 @@ export default function App() {
 
   return (
     <main className="App">
-            <NavBar user={user} setUser={setUser} />
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/auth" element={<AuthPage />} setUser={setUser}/>
+      {user ?
+        <>
+          <NavBar user={user} setUser={setUser} />
 
-              <Route path="/workouts" element={<WorkoutsListPage />} />
-              <Route path="/workouts/new" element={<NewWorkoutPage/>} />
-              <Route path="/workouts/:workoutName" element={<WorkoutDetailPage />} />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
 
-              <Route path="/workouts-of-days/calendar-schedule" element={<CalendarSchedulePage />} />
-              <Route path="/workouts-of-days/calendar-schedule/:date" element={<WorkoutOfDayPage />} />
-              <Route path="/workouts-of-days/list-schedule" element={<ListSchedulePage />} /> 
-              <Route path="/workouts-of-days/new" element={<NewWorkoutOfDayPage />} />
+            <Route path="/workouts" element={<WorkoutsListPage />} />
+            <Route path="/workouts/new" element={<NewWorkoutPage />} />
+            <Route path="/workouts/:workoutName" element={<WorkoutDetailPage />} />
 
-              <Route path="/*" element={<Navigate to="/" />} />
-            </Routes>
+            <Route path="/workouts-of-days/calendar-schedule" element={<CalendarSchedulePage />} />
+            <Route path="/workouts-of-days/calendar-schedule/:date" element={<WorkoutOfDayPage />} />
+            <Route path="/workouts-of-days/list-schedule" element={<ListSchedulePage />} />
+            <Route path="/workouts-of-days/new" element={<NewWorkoutOfDayPage />} />
+
+            <Route path="/*" element={<Navigate to="/" />} />
+          </Routes>
+        </>
+        :
+        <>
+          <NavBar user={user} setUser={setUser} />
+
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            
+            <Route path="/auth" element={<AuthPage />} setUser={setUser} />
+          </Routes>
+        </>
+      }
     </main>
   );
 }
