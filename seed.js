@@ -1,7 +1,7 @@
 require('dotenv').config();
 require('./config/database');
 
-const Exercise = require('./models/exercise-temp')
+const Exercise = require('./models/exercise')
 
 (async function() {
 
