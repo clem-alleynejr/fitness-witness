@@ -1,18 +1,18 @@
-import './CategoryList.css';
+import './BodyPartList.css';
 
-export default function CategoryList({ categories, activeCat, setActiveCat }) {
-  const cats = categories.map(cat =>
+export default function BodyPartList({ bodyParts, activeBodyPart, setActiveBodyPart }) {
+  const bPs = bodyParts.map(bP =>
     <li
-      key={cat}
-      className={cat === activeCat ? 'active' : ''}
-      onClick={() => setActiveCat(cat)}
+      key={bP}
+      className={bP === activeBodyPart ? 'active' : ''}
+      onClick={() => setActiveBodyPart(bP)}
     >
-      {cat}
+      {bP}
     </li>
   );
   return (
-    <ul className="CategoryList">
-      {cats}
+    <ul className="BodyPartList">
+      {bPs}
     </ul>
   );
 }
