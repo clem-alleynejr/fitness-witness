@@ -15,9 +15,6 @@ export default function NewWorkoutPage() {
     }, []);
 
     return (
-        <>
-        <h1>NewWorkoutPage</h1>
-        <button onClick={setExerciseOptions}>Trigger re-render</button>
-        </>
+<h1>NewWorkoutPage</h1>
     )
 } 

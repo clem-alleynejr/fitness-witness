@@ -46,7 +46,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             
-            <Route path="/auth" element={<AuthPage />} setUser={setUser} />
+            <Route path="/auth" element={<AuthPage setUser={setUser}/>}  />
           </Routes>
         </>
       }
