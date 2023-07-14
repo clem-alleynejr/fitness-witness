@@ -23,7 +23,7 @@ export function setExerciseRepQtyInUnsavedWorkout(exerciseId, newSetQty) {
 }
 
 // Updates the unsaved Workout's isSaved property to true (turning it into a saved workout)
-export function saveWorkout() {
+export function saveUnsavedWorkout() {
   // Changing data on the server, so make it a POST request
-  return sendRequest(`${BASE_URL}/unsavedWorkout/saveWorkout`, 'POST');
+  return sendRequest(`${BASE_URL}/unsavedWorkout/saveUnsavedWorkout`, 'POST');
 }

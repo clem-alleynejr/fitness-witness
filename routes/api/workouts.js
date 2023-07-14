@@ -7,7 +7,7 @@ router.get('/unsavedWorkout', workoutsCtrl.unsavedWorkout);
 // POST /api/workouts/unsavedWorkout/exercises/:id
 router.post('/unsavedWorkout/exercises/:id', workoutsCtrl.addToUnsavedWorkout);
 // POST /api/workouts/unsavedWorkout/saveWorkout
-router.post('/unsavedWorkout/saveWorkout', workoutsCtrl.saveWorkout);
+router.post('/unsavedWorkout/saveUnsavedWorkout', workoutsCtrl.saveUnsavedWorkout);
 // PUT /api/workouts/unsavedWorkout/setQty
 router.put('/unsavedWorkout/setQty', workoutsCtrl.setSetQtyInUnsavedWorkout);
 // PUT /api/workouts/unsavedWorkout/repQty
