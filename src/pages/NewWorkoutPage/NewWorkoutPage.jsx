@@ -33,9 +33,7 @@ export default function NewWorkoutPage() {
             <ExerciseOptionList
                 exerciseOptions={exerciseOptions.filter(exercise => exercise.bodyPart === activeBodyPart)}
             />
-            <NewWorkoutDetail 
-
-            />
+            <NewWorkoutDetail />
         </main>
     )
 } 
