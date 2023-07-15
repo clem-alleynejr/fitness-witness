@@ -11,7 +11,7 @@ module.exports = {
 
 
 async function unsavedWorkout(req, res) {
-        const unsavedWorkout = await Workout.unsavedWorkout(req.user._id);
+        const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
         res.json(unsavedWorkout);
 }
 
