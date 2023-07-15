@@ -19,13 +19,25 @@ const workoutSchema =  new Schema({
     timestamps: true
 })
 
-
 workoutSchema.statics.getUnsavedWorkout = function(userId) {
     return this.findOneAndUpdate(
         { user: userId, isSaved: false },
         { user: userId },
         { upsert: true, new: true }
     )
+}
+
+workoutSchema.statics.addExerciseToUnsavedWorkout = async function(exerciseId) {
+    const unsavedWorkout = this;
+    const exerciseChoice = unsavedWorkout.exerciseChoices.find(exerciseChoice => exerciseChoice.exercise._id.equals(exerciseId));
+    if (exerciseChoice) {
+        return;
+    } else {
+        const Exercise = mongoose.model('Exercise');
+        const exercise = await Exercise.findById(exerciseId);
+        unsavedWorkout.exerciseChoices.push({exercise});
+    }
+    return unsavedWorkout.save();
 }
 
 module.exports = mongoose.model('Workout', workoutSchema)

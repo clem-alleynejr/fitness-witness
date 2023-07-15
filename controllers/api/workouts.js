@@ -11,13 +11,15 @@ module.exports = {
 
 
 async function unsavedWorkout(req, res) {
-        const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
-        res.json(unsavedWorkout);
+    const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
+    res.json(unsavedWorkout);
 }
 
 // Add an exercise to the unsaved workout
 async function addToUnsavedWorkout(req, res) {
-
+    const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
+    await unsavedWorkout.addExerciseToUnsavedWorkout(req.params.id);
+    res.json(unsavedWorkout);
 }
 
 // Updates the unsaved Workout's isSaved property to true (turning it into a saved workout)

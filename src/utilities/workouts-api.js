@@ -8,7 +8,7 @@ export function getUnsavedWorkout() {
 }
 
 // Add an exercise to the unsaved workout
-export function addWorkoutToUnsavedWorkout(exerciseId) {
+export function addExerciseToUnsavedWorkout(exerciseId) {
   return sendRequest(`${BASE_URL}/unsavedWorkout/exercises/${exerciseId}`, 'POST');
 }
 

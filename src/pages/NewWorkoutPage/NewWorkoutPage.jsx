@@ -31,7 +31,8 @@ export default function NewWorkoutPage({ user, setUser }) {
     }, []);
 
     async function handleAddToWorkout(exerciseId) {
-        alert(`add exercise: ${exerciseId}`)
+        const UpdatedUnsavedWorkout = await workoutsAPI.addExerciseToUnsavedWorkout(exerciseId);
+        setUnsavedWorkout(UpdatedUnsavedWorkout)
     }
 
     return (
