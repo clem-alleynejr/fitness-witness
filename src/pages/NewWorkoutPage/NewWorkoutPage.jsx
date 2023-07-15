@@ -30,6 +30,10 @@ export default function NewWorkoutPage({ user, setUser }) {
 
     }, []);
 
+    async function handleAddToWorkout(exerciseId) {
+        alert(`add exercise: ${exerciseId}`)
+    }
+
     return (
         <main className="NewWorkoutPage">
             <aside>
@@ -42,6 +46,7 @@ export default function NewWorkoutPage({ user, setUser }) {
             </aside>
             <ExerciseOptionList
                 exerciseOptions={exerciseOptions.filter(exercise => exercise.bodyPart === activeBodyPart)}
+                handleAddToWorkout={handleAddToWorkout}
             />
             <WorkoutDetail 
                 workout={unsavedWorkout}
