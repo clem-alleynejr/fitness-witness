@@ -27,7 +27,7 @@ workoutSchema.statics.getUnsavedWorkout = function(userId) {
     )
 }
 
-workoutSchema.statics.addExerciseToUnsavedWorkout = async function(exerciseId) {
+workoutSchema.methods.addExerciseToUnsavedWorkout = async function(exerciseId) {
     const unsavedWorkout = this;
     const exerciseChoice = unsavedWorkout.exerciseChoices.find(exerciseChoice => exerciseChoice.exercise._id.equals(exerciseId));
     if (exerciseChoice) {
