@@ -19,4 +19,13 @@ const workoutSchema =  new Schema({
     timestamps: true
 })
 
+
+workoutSchema.statics.getUnsavedWorkout = function(userId) {
+    return this.findOneAndUpdate(
+        { user: userId, isSaved: false },
+        { user: userId },
+        { upsert: true, new: true }
+    )
+}
+
 module.exports = mongoose.model('Workout', workoutSchema)

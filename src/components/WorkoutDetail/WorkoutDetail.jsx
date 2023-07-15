@@ -1,7 +1,7 @@
-import './NewWorkoutDetail.css';
+import './WorkoutDetail.css';
 import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
 
-export default function NewWorkoutDetail() {
+export default function WorkoutDetail({ workout }) {
     if (!workout) return null;
 
     const exerciseChoices = workout.exerciseChoices.map(exercise =>
@@ -13,7 +13,7 @@ export default function NewWorkoutDetail() {
     );
 
     return (
-        <div className="NewWorkoutDetail">
+        <div className="WorkoutDetail">
             <div className="section-heading">
                 {workout.isSaved ?
                     <span>{workout.name}</span>

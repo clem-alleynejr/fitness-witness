@@ -28,7 +28,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
 
             <Route path="/workouts" element={<WorkoutsListPage />} />
-            <Route path="/workouts/new" element={<NewWorkoutPage />} />
+            <Route path="/workouts/new" element={<NewWorkoutPage user={user} setUser={setUser} />} />
             <Route path="/workouts/:workoutName" element={<WorkoutDetailPage />} />
 
             <Route path="/workouts-of-days/calendar-schedule" element={<CalendarSchedulePage />} />

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const workoutsCtrl = require('../../controllers/api/workouts');
 
-// GET /api/workouts/cart
+// GET /api/workouts/unsavedWorkout
 router.get('/unsavedWorkout', workoutsCtrl.unsavedWorkout);
 // POST /api/workouts/unsavedWorkout/exercises/:id
 router.post('/unsavedWorkout/exercises/:id', workoutsCtrl.addToUnsavedWorkout);

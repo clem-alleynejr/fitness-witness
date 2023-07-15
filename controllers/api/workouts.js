@@ -1,4 +1,4 @@
-// const Order = require('../../models/order');
+const Workout = require('../../models/workout');
 // const Item = require('../../models/item');
 
 module.exports = {
@@ -11,7 +11,8 @@ module.exports = {
 
 
 async function unsavedWorkout(req, res) {
-
+        const unsavedWorkout = await Workout.unsavedWorkout(req.user._id);
+        res.json(unsavedWorkout);
 }
 
 // Add an exercise to the unsaved workout

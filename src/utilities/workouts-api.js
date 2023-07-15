@@ -9,7 +9,7 @@ export function getUnsavedWorkout() {
 
 // Add an exercise to the unsaved workout
 export function addWorkoutToUnsavedWorkout(exerciseId) {
-  return sendRequest(`${BASE_URL}/unsavedWorkout/exercises/${workoutId}`, 'POST');
+  return sendRequest(`${BASE_URL}/unsavedWorkout/exercises/${exerciseId}`, 'POST');
 }
 
 // Update the exercise's number of sets in the unsaved workout
@@ -18,7 +18,7 @@ export function setExerciseSetQtyInUnsavedWorkout(exerciseId, newSetQty) {
 }
 
 // Update the exercise's number of reps in the unsaved workout
-export function setExerciseRepQtyInUnsavedWorkout(exerciseId, newSetQty) {
+export function setExerciseRepQtyInUnsavedWorkout(exerciseId, newRepQty) {
   return sendRequest(`${BASE_URL}/unsavedWorkout/repQty`, 'PUT', { exerciseId, newRepQty });
 }
 
