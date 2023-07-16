@@ -40,4 +40,18 @@ workoutSchema.methods.addExerciseToUnsavedWorkout = async function(exerciseId) {
     return unsavedWorkout.save();
 }
 
+workoutSchema.methods.setSetQty = function(exerciseId, newSetQty) {
+    const unsavedWorkout = this;
+    const exerciseChoice = unsavedWorkout.exerciseChoices.find(exerciseChoice => exerciseChoice.exercise._id.equals(exerciseId))
+    exerciseChoice.setQty = newSetQty
+    return unsavedWorkout.save()
+}
+
+workoutSchema.methods.setRepQty = function(exerciseId, newRepQty) {
+    const unsavedWorkout = this;
+    const exerciseChoice = unsavedWorkout.exerciseChoices.find(exerciseChoice => exerciseChoice.exercise._id.equals(exerciseId))
+    exerciseChoice.repQty = newRepQty
+    return unsavedWorkout.save()
+}
+
 module.exports = mongoose.model('Workout', workoutSchema)

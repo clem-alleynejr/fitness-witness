@@ -5,7 +5,7 @@ import './App.css';
 import HomePage from '../HomePage/HomePage';
 import AuthPage from '../AuthPage/AuthPage';
 import NewWorkoutPage from '../NewWorkoutPage/NewWorkoutPage';
-
+import SavedWorkoutsPage from '../SavedWorkoutsPage/SavedWorkoutsPage';
 
 
 
@@ -24,6 +24,7 @@ export default function App() {
             <Route path="/" element={<HomePage />} />
 
             <Route path="/workouts/new" element={<NewWorkoutPage user={user} setUser={setUser} />} />
+            <Route path="/workouts" element={<SavedWorkoutsPage />} />
 
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>

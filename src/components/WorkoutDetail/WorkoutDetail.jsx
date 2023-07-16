@@ -1,7 +1,7 @@
 import './WorkoutDetail.css';
 import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
 
-export default function WorkoutDetail({ workout }) {
+export default function WorkoutDetail({ workout, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout }) {
     if (!workout) return null;
 
     const exerciseChoices = workout.exerciseChoices.map(exercise =>
@@ -9,6 +9,8 @@ export default function WorkoutDetail({ workout }) {
             exerciseChoice={exercise}
             isSaved={workout.isSaved}
             key={exercise._id}
+            handleChangeSetQty={handleChangeSetQty}
+            handleChangeRepQty={handleChangeRepQty}
         />
     );
 
@@ -34,7 +36,7 @@ export default function WorkoutDetail({ workout }) {
                                 :
                                 <button
                                     className="btn-sm"
-                                    onClick={() => alert('clicked')}
+                                    onClick={handleSaveUnsavedWorkout}
                                     disabled={!exerciseChoices.length}
                                 >SAVE WORKOUT</button>
                             }

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './NewWorkoutPage.css';
 import * as exercisesAPI from '../../utilities/exercises-api'
 import * as workoutsAPI from '../../utilities/workouts-api'
@@ -12,6 +12,7 @@ export default function NewWorkoutPage({ user, setUser }) {
     const [activeBodyPart, setActiveBodyPart] = useState('')
     const [unsavedWorkout, setUnsavedWorkout] = useState(null);
     const bodyPartRef = useRef([]);
+    const navigate = useNavigate();
 
     useEffect(function () {
         async function getExercises() {
@@ -31,8 +32,23 @@ export default function NewWorkoutPage({ user, setUser }) {
     }, []);
 
     async function handleAddToWorkout(exerciseId) {
-        const UpdatedUnsavedWorkout = await workoutsAPI.addExerciseToUnsavedWorkout(exerciseId);
-        setUnsavedWorkout(UpdatedUnsavedWorkout)
+        const updatedUnsavedWorkout = await workoutsAPI.addExerciseToUnsavedWorkout(exerciseId);
+        setUnsavedWorkout(updatedUnsavedWorkout)
+    }
+
+    async function handleChangeSetQty(exerciseId, newSetQty) {
+        const updatedUnsavedWorkout = await workoutsAPI.setExerciseSetQtyInUnsavedWorkout(exerciseId, newSetQty);
+        setUnsavedWorkout(updatedUnsavedWorkout)
+    }
+
+    async function handleChangeRepQty(exerciseId, newRepQty) {
+        const updatedUnsavedWorkout = await workoutsAPI.setExerciseRepQtyInUnsavedWorkout(exerciseId, newRepQty);
+        setUnsavedWorkout(updatedUnsavedWorkout)        
+    }
+
+    async function handleSaveUnsavedWorkout() {
+        await workoutsAPI.saveUnsavedWorkout();
+        navigate('/workouts');
     }
 
     return (
@@ -51,6 +67,9 @@ export default function NewWorkoutPage({ user, setUser }) {
             />
             <WorkoutDetail 
                 workout={unsavedWorkout}
+                handleChangeSetQty={handleChangeSetQty}
+                handleChangeRepQty={handleChangeRepQty}
+                handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}
             />
         </main>
     )

@@ -24,14 +24,22 @@ async function addToUnsavedWorkout(req, res) {
 
 // Updates the unsaved Workout's isSaved property to true (turning it into a saved workout)
 async function saveUnsavedWorkout(req, res) {
+    const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
+    unsavedWorkout.isSaved = true;
+    await unsavedWorkout.save();
+    res.json(unsavedWorkout)
 }
 
 // Update the exercise's number of sets in the unsaved workout
 async function setSetQtyInUnsavedWorkout(req, res) {
-
+    const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
+    await unsavedWorkout.setSetQty(req.body.exerciseId, req.body.newSetQty);
+    res.json(unsavedWorkout)
 }
 
 // Update the exercise's number of reps in the unsaved workout
 async function setRepQtyInUnsavedWorkout(req, res) {
-
+    const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
+    await unsavedWorkout.setRepQty(req.body.exerciseId, req.body.newRepQty);
+    res.json(unsavedWorkout)
 }
