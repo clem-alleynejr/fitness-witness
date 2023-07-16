@@ -27,3 +27,8 @@ export function saveUnsavedWorkout() {
   // Changing data on the server, so make it a POST request
   return sendRequest(`${BASE_URL}/unsavedWorkout/saveUnsavedWorkout`, 'POST');
 }
+
+// Retrieve all saved workouts for the logged in user
+export function getAll() {
+  return sendRequest(BASE_URL)
+}

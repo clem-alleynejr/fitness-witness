@@ -6,7 +6,8 @@ module.exports = {
     addToUnsavedWorkout,
     saveUnsavedWorkout,
     setSetQtyInUnsavedWorkout,
-    setRepQtyInUnsavedWorkout
+    setRepQtyInUnsavedWorkout,
+    index
 };
 
 
@@ -42,4 +43,9 @@ async function setRepQtyInUnsavedWorkout(req, res) {
     const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
     await unsavedWorkout.setRepQty(req.body.exerciseId, req.body.newRepQty);
     res.json(unsavedWorkout)
+}
+
+async function index(req, res) {
+    const workouts = await Workout.find({ user: req.user._id}).exec()
+    res.json(workouts)
 }

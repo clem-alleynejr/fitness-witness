@@ -13,4 +13,6 @@ router.put('/unsavedWorkout/setQty', workoutsCtrl.setSetQtyInUnsavedWorkout);
 // PUT /api/workouts/unsavedWorkout/repQty
 router.put('/unsavedWorkout/reqQty', workoutsCtrl.setRepQtyInUnsavedWorkout);
 
+router.get('/', workoutsCtrl.index);
+
 module.exports = router;
