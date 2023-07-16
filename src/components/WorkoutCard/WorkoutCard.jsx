@@ -1,8 +1,11 @@
 import './WorkoutCard.css';
 
-export default function WorkoutCard({ workout }) {
+export default function WorkoutCard({ workout, activeWorkout, setActiveWorkout }) {
     return (
-        <div className="WorkoutCard">
+        <div
+            className={`WorkoutCard ${workout === activeWorkout ? 'selected' : ''}`}
+            onClick={() => setActiveWorkout(workout)}
+        >
             <div className="id">{workout._id}</div>
         </div>
     )

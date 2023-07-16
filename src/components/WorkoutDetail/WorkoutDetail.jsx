@@ -18,7 +18,7 @@ export default function WorkoutDetail({ workout, handleChangeSetQty, handleChang
         <div className="WorkoutDetail">
             <div className="section-heading">
                 {workout.isSaved ?
-                    <span>{workout.name}</span>
+                    <span>{workout._id}</span>
                     :
                     <span>NEW WORKOUT</span>
                 }

@@ -2,15 +2,18 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import './SavedWorkoutsPage.css'
 import WorkoutList from '../../components/WorkoutList/WorkoutList'
+import WorkoutDetail from '../../components/WorkoutDetail/WorkoutDetail'
 import * as workoutsAPI from '../../utilities/workouts-api'
 
 export default function SavedWorkoutsPage() {
     const [workouts, setWorkouts] = useState([]);
+    const [activeWorkout, setActiveWorkout] = useState(null);
 
     useEffect(function () {
         async function getWorkouts() {
             const workouts = await workoutsAPI.getAll();
             setWorkouts(workouts);
+            setActiveWorkout(workouts[0] || null);
         }
         getWorkouts();
     }, []);
@@ -25,9 +28,14 @@ export default function SavedWorkoutsPage() {
             {/* Render WorkoutList components */}
             <WorkoutList
                 workouts={workouts}
+                activeWorkout={activeWorkout}
+                setActiveWorkout={setActiveWorkout}
             />
 
             {/* Render existing Workoutdetail component */}
+            <WorkoutDetail
+                workout={activeWorkout}
+            />
 
         </main>
     );
