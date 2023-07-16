@@ -1,7 +1,7 @@
 import './WorkoutDetail.css';
 import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
 
-export default function WorkoutDetail({ workout, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout }) {
+export default function WorkoutDetail({ workout, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout }) {
     if (!workout) return null;
 
     const exerciseChoices = workout.exerciseChoices.map(exercise =>
@@ -29,10 +29,16 @@ export default function WorkoutDetail({ workout, handleChangeSetQty, handleChang
                         {exerciseChoices}
                         <section className="total">
                             {workout.isSaved ?
-                                <button
-                                    className="btn-sm"
-                                    onClick={() => alert('clicked')}
-                                >EDIT WORKOUT</button>
+                                <>
+                                    <button
+                                        className="btn-sm"
+                                        onClick={() => handleEditWorkout(workout._id)}
+                                    >EDIT WORKOUT</button>
+                                    <button
+                                        className="btn-sm"
+                                        onClick={() => handleDeleteWorkout(workout._id)}
+                                    >DELETE WORKOUT</button>
+                                </>
                                 :
                                 <button
                                     className="btn-sm"

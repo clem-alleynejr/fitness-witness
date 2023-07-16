@@ -54,4 +54,5 @@ workoutSchema.methods.setRepQty = function(exerciseId, newRepQty) {
     return unsavedWorkout.save()
 }
 
+
 module.exports = mongoose.model('Workout', workoutSchema)

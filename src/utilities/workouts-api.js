@@ -32,3 +32,8 @@ export function saveUnsavedWorkout() {
 export function getAll() {
   return sendRequest(BASE_URL)
 }
+
+// Delete a workout from a user's saved workout list
+export function deleteSavedWorkout(workoutId) {
+  return sendRequest(`${BASE_URL}/${workoutId}`, 'DELETE')
+}

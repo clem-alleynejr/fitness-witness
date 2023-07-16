@@ -18,6 +18,15 @@ export default function SavedWorkoutsPage() {
         getWorkouts();
     }, []);
 
+    async function handleDeleteWorkout(workoutId) {
+        const updatedWorkoutList = await workoutsAPI.deleteSavedWorkout(workoutId)
+        setWorkouts(updatedWorkoutList)
+    }
+
+    async function handleEditWorkout(workoutId) {
+        
+    }
+
     return (
         <main className="SavedWorkoutsPage">
             <aside>
@@ -35,6 +44,7 @@ export default function SavedWorkoutsPage() {
             {/* Render existing Workoutdetail component */}
             <WorkoutDetail
                 workout={activeWorkout}
+                handleDeleteWorkout={handleDeleteWorkout}
             />
 
         </main>
