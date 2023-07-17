@@ -11,7 +11,7 @@ router.post('/unsavedWorkout/saveUnsavedWorkout', workoutsCtrl.saveUnsavedWorkou
 // PUT /api/workouts/unsavedWorkout/setQty
 router.put('/unsavedWorkout/setQty', workoutsCtrl.setSetQtyInUnsavedWorkout);
 // PUT /api/workouts/unsavedWorkout/repQty
-router.put('/unsavedWorkout/reqQty', workoutsCtrl.setRepQtyInUnsavedWorkout);
+router.put('/unsavedWorkout/repQty', workoutsCtrl.setRepQtyInUnsavedWorkout);
 
 router.get('/', workoutsCtrl.index);
 router.delete('/:id', workoutsCtrl.deleteSavedWorkout)
