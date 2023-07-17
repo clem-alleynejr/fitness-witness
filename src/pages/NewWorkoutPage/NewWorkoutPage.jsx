@@ -7,7 +7,7 @@ import BodyPartList from '../../components/BodyPartList/BodyPartList'
 import ExerciseOptionList from '../../components/ExerciseOptionList/ExerciseOptionList'
 import WorkoutDetail from '../../components/WorkoutDetail/WorkoutDetail'
 
-export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsavedWorkout }) {
+export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsavedWorkout, editWorkout, setEditWorkout }) {
     const [exerciseOptions, setExerciseOptions] = useState([]);
     const [activeBodyPart, setActiveBodyPart] = useState('')
     const bodyPartRef = useRef([]);
@@ -77,6 +77,8 @@ export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsav
                 handleChangeSetQty={handleChangeSetQty}
                 handleChangeRepQty={handleChangeRepQty}
                 handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}
+                editWorkout={editWorkout}
+                setEditWorkout={setEditWorkout}
             />
         </main>
     )

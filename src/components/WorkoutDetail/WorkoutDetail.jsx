@@ -1,8 +1,10 @@
 import './WorkoutDetail.css';
 import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
+import {useState} from 'react';
 
 
-export default function WorkoutDetail({ workout, handleChangeWorkoutName, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout }) {
+export default function WorkoutDetail({ workout, handleChangeWorkoutName, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout, editWorkout, setEditWorkout }) {
+    
     if (!workout) return null;
 
     const exerciseChoices = workout.exerciseChoices.map(exercise =>
@@ -12,9 +14,17 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
             key={exercise._id}
             handleChangeSetQty={handleChangeSetQty}
             handleChangeRepQty={handleChangeRepQty}
+            editWorkout={editWorkout}
+            setEditWorkout={setEditWorkout}
+            workout={workout}
         />
     );
     
+        function handleEdit(evt) {
+            setEditWorkout(true);
+            handleEditWorkout(workout._id)
+        }
+
     return (
         <div className="WorkoutDetail">
             <div className="section-heading">
@@ -23,7 +33,7 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
                     :
                     <>
                     <span>Enter Workout Name:</span>
-                    <input type="text" name="workoutName" onChange={(evt) => handleChangeWorkoutName(workout._id, evt.target.value)} />
+                    <input type="text" name="workoutName" defaultValue={editWorkout? workout.name : ''} onChange={(evt) => handleChangeWorkoutName(workout._id, evt.target.value)} />
                     </>
                 }
             </div>
@@ -36,7 +46,7 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
                                 <>
                                     <button
                                         className="btn-sm"
-                                        onClick={() => handleEditWorkout(workout._id)}
+                                        onClick={handleEdit}
                                     >EDIT WORKOUT</button>
                                     <button
                                         className="btn-sm"

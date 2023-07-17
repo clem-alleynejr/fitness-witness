@@ -5,7 +5,7 @@ import WorkoutList from '../../components/WorkoutList/WorkoutList'
 import WorkoutDetail from '../../components/WorkoutDetail/WorkoutDetail'
 import * as workoutsAPI from '../../utilities/workouts-api'
 
-export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout}) {
+export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, editWorkout, setEditWorkout}) {
     const [workouts, setWorkouts] = useState([]);
     const [activeWorkout, setActiveWorkout] = useState(null);
     const navigate = useNavigate()
@@ -53,6 +53,7 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout}) {
         setActiveWorkout(savedWorkout)
         const updatedWorkoutsArray = workouts.map(workout => workout._id === activeWorkout._id ? savedWorkout : workout)
         setWorkouts(updatedWorkoutsArray)
+        setEditWorkout(false)
         navigate('/workouts');
     }
 
@@ -79,6 +80,8 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout}) {
                 handleChangeSetQty={handleChangeSetQty}
                 handleChangeRepQty={handleChangeRepQty}
                 handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}
+                editWorkout={editWorkout}
+                setEditWorkout={setEditWorkout}
             />
 
         </main>
