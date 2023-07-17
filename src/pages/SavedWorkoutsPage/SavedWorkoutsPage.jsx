@@ -21,10 +21,11 @@ export default function SavedWorkoutsPage() {
     async function handleDeleteWorkout(workoutId) {
         const updatedWorkoutList = await workoutsAPI.deleteSavedWorkout(workoutId)
         setWorkouts(updatedWorkoutList)
+        setActiveWorkout(workouts[0] || null);
     }
 
     async function handleEditWorkout(workoutId) {
-        
+
     }
 
     return (
