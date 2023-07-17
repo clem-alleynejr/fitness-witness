@@ -1,11 +1,9 @@
 import './WorkoutDetail.css';
 import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
-import {useState} from 'react';
+
 
 export default function WorkoutDetail({ workout, handleChangeWorkoutName, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout }) {
     if (!workout) return null;
-
-    const [editWorkout, setEditWorkout] = useState(false)
 
     const exerciseChoices = workout.exerciseChoices.map(exercise =>
         <ExerciseChoice

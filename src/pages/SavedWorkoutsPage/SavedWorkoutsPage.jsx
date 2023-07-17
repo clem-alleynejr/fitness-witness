@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './SavedWorkoutsPage.css'
 import WorkoutList from '../../components/WorkoutList/WorkoutList'
 import WorkoutDetail from '../../components/WorkoutDetail/WorkoutDetail'
 import * as workoutsAPI from '../../utilities/workouts-api'
 
-export default function SavedWorkoutsPage() {
+export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout}) {
     const [workouts, setWorkouts] = useState([]);
     const [activeWorkout, setActiveWorkout] = useState(null);
+    const navigate = useNavigate()
 
     useEffect(function () {
         async function getWorkouts() {
@@ -27,7 +28,32 @@ export default function SavedWorkoutsPage() {
 
     async function handleEditworkout(workoutId, newWorkoutName) {
         const updatedWorkout = await workoutsAPI.editWorkout(workoutId);
+        const updatedWorkoutsArray = workouts.map(workout => workout._id === workoutId ? updatedWorkout : workout)
+        setWorkouts(updatedWorkoutsArray)
         setActiveWorkout(updatedWorkout)
+    }
+
+    async function handleChangeWorkoutName(workoutId, newWorkoutName) {
+        const updatedUnsavedWorkout = await workoutsAPI.setWorkoutName(workoutId, newWorkoutName);
+        setUnsavedWorkout(updatedUnsavedWorkout)
+    }
+    
+    async function handleChangeSetQty(exerciseId, newSetQty) {
+        const updatedUnsavedWorkout = await workoutsAPI.setExerciseSetQtyInUnsavedWorkout(exerciseId, newSetQty);
+        setUnsavedWorkout(updatedUnsavedWorkout)
+    }
+
+    async function handleChangeRepQty(exerciseId, newRepQty) {
+        const updatedUnsavedWorkout = await workoutsAPI.setExerciseRepQtyInUnsavedWorkout(exerciseId, newRepQty);
+        setUnsavedWorkout(updatedUnsavedWorkout)        
+    }
+
+    async function handleSaveUnsavedWorkout() {
+        const savedWorkout = await workoutsAPI.saveUnsavedWorkout();
+        setActiveWorkout(savedWorkout)
+        const updatedWorkoutsArray = workouts.map(workout => workout._id === activeWorkout._id ? savedWorkout : workout)
+        setWorkouts(updatedWorkoutsArray)
+        navigate('/workouts');
     }
 
     return (
@@ -49,6 +75,10 @@ export default function SavedWorkoutsPage() {
                 workout={activeWorkout}
                 handleDeleteWorkout={handleDeleteWorkout}
                 handleEditWorkout={handleEditworkout}
+                handleChangeWorkoutName={handleChangeWorkoutName}
+                handleChangeSetQty={handleChangeSetQty}
+                handleChangeRepQty={handleChangeRepQty}
+                handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}
             />
 
         </main>

@@ -67,8 +67,9 @@ async function deleteSavedWorkout(req, res) {
 }
 
 async function editWorkout(req, res) {
-    const workoutToEdit = await Workout.find({ _id: req.body.workoutId })
+    const workoutToEdit = await Workout.findOne({ _id: req.body.workoutId })
     workoutToEdit.isSaved = false;
+    console.log(workoutToEdit)
     await workoutToEdit.save();
     res.json(workoutToEdit)
 }

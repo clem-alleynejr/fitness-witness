@@ -13,6 +13,7 @@ import NavBar from '../../components/NavBar/NavBar';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [unsavedWorkout, setUnsavedWorkout] = useState(null);
 
   return (
     <main className="App">
@@ -23,8 +24,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
 
-            <Route path="/workouts/new" element={<NewWorkoutPage user={user} setUser={setUser} />} />
-            <Route path="/workouts" element={<SavedWorkoutsPage />} />
+            <Route path="/workouts/new" element={<NewWorkoutPage user={user} setUser={setUser} unsavedWorkout={unsavedWorkout} setUnsavedWorkout={setUnsavedWorkout} />} />
+            <Route path="/workouts" element={<SavedWorkoutsPage unsavedWorkout={unsavedWorkout} setUnsavedWorkout={setUnsavedWorkout}/>} />
 
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
