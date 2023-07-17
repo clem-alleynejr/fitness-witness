@@ -66,9 +66,11 @@ export default function NewWorkoutPage({ user, setUser }) {
                 />
                 <Link to="/workouts" className="button btn-sm">My Workouts</Link>
             </aside>
+
             <ExerciseOptionList
                 exerciseOptions={exerciseOptions.filter(exercise => exercise.bodyPart === activeBodyPart)}
                 handleAddToWorkout={handleAddToWorkout}
+                useState={useState}
             />
             <WorkoutDetail 
                 workout={unsavedWorkout}
