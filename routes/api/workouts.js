@@ -16,6 +16,7 @@ router.put('/unsavedWorkout/setQty', workoutsCtrl.setSetQtyInUnsavedWorkout);
 router.put('/unsavedWorkout/repQty', workoutsCtrl.setRepQtyInUnsavedWorkout);
 
 router.get('/', workoutsCtrl.index);
+router.put('/editWorkout', workoutsCtrl.editWorkout)
 router.delete('/:id', workoutsCtrl.deleteSavedWorkout)
 
 module.exports = router;

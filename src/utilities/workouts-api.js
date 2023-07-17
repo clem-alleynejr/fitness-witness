@@ -43,3 +43,8 @@ export function getAll() {
 export function deleteSavedWorkout(workoutId) {
   return sendRequest(`${BASE_URL}/${workoutId}`, 'DELETE')
 }
+
+// Update a saved workout (changing "isSaved" to false)
+export function editWorkout(workoutId) {
+  return sendRequest(`${BASE_URL}/editWorkout`, 'PUT', { workoutId })
+}

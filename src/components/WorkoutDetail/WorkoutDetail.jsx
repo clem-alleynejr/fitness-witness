@@ -4,6 +4,7 @@ import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
 export default function WorkoutDetail({ workout, handleChangeWorkoutName, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout }) {
     if (!workout) return null;
 
+
     const exerciseChoices = workout.exerciseChoices.map(exercise =>
         <ExerciseChoice
             exerciseChoice={exercise}
@@ -14,7 +15,6 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
         />
     );
     
-
     return (
         <div className="WorkoutDetail">
             <div className="section-heading">

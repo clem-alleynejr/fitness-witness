@@ -25,6 +25,11 @@ export default function SavedWorkoutsPage() {
         setActiveWorkout(workouts[0] || null);
     }
 
+    async function handleEditworkout(workoutId, newWorkoutName) {
+        const updatedWorkout = await workoutsAPI.editWorkout(workoutId);
+        setActiveWorkout(updatedWorkout)
+    }
+
     return (
         <main className="SavedWorkoutsPage">
             <aside>
@@ -43,6 +48,7 @@ export default function SavedWorkoutsPage() {
             <WorkoutDetail
                 workout={activeWorkout}
                 handleDeleteWorkout={handleDeleteWorkout}
+                handleEditWorkout={handleEditworkout}
             />
 
         </main>
