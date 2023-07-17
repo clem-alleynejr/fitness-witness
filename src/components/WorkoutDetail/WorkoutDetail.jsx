@@ -13,6 +13,7 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
             handleChangeRepQty={handleChangeRepQty}
         />
     );
+    
 
     return (
         <div className="WorkoutDetail">
@@ -21,7 +22,7 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
                     <span>{workout.name}</span>
                     :
                     <>
-                    <span>NEW WORKOUT</span>
+                    <span>Enter Workout Name:</span>
                     <input type="text" name="workoutName" onChange={(evt) => handleChangeWorkoutName(workout._id, evt.target.value)} />
                     </>
                 }

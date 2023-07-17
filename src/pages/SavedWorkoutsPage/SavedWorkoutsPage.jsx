@@ -25,10 +25,6 @@ export default function SavedWorkoutsPage() {
         setActiveWorkout(workouts[0] || null);
     }
 
-    async function handleEditWorkout(workoutId) {
-
-    }
-
     return (
         <main className="SavedWorkoutsPage">
             <aside>
