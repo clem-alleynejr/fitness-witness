@@ -70,6 +70,7 @@ export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsav
                 exerciseOptions={exerciseOptions.filter(exercise => exercise.bodyPart === activeBodyPart)}
                 handleAddToWorkout={handleAddToWorkout}
                 useState={useState}
+                activeBodyPart={activeBodyPart}
             />
             <WorkoutDetail 
                 workout={unsavedWorkout}

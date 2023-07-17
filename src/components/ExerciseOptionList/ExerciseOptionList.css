@@ -1,0 +1,9 @@
+
+.ExerciseOptionList {
+  display: flex;
+  flex-direction: column;
+}
+
+.SearchBar {
+  margin-bottom: 10px;
+}

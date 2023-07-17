@@ -10,12 +10,14 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
-      <Link to="/">Home</Link>
+    <nav className="navbar bg-body-tertiary">
+      <div className="container-fluid">
+        <Link to="/">Fitness Witness</Link>
+      </div>
       &nbsp; | &nbsp;
       {user ?
         <>
-          <Link to="/workouts">My Workouts</Link>
+          <Link to="/workouts" className="nav-link">My Workouts</Link>
           &nbsp; | &nbsp;
           <p>{user.name}</p>
           &nbsp; | &nbsp;

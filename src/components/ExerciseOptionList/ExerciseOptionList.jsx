@@ -1,7 +1,7 @@
 import './ExerciseOptionList.css';
 import ExerciseOption from '../ExerciseOption/ExerciseOption';
 
-export default function ExerciseOptionList({ exerciseOptions, handleAddToWorkout, useState }) {
+export default function ExerciseOptionList({ exerciseOptions, handleAddToWorkout, useState, activeBodyPart }) {
   
   const [search, setSearch] = useState('')
   console.log(search)
@@ -19,7 +19,7 @@ export default function ExerciseOptionList({ exerciseOptions, handleAddToWorkout
   return (
     <>
       <div className="SearchBar">
-        <input type="text" onChange={(evt) => setSearch(evt.target.value)}/>
+        <input type="text" placeholder={`Search ${activeBodyPart} Exercise`} onChange={(evt) => setSearch(evt.target.value)}/>
       </div>
       <main className="ExerciseOptionList">
         {exercises}
