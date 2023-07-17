@@ -6,7 +6,7 @@ export default function WorkoutCard({ workout, activeWorkout, setActiveWorkout }
             className={`WorkoutCard ${workout === activeWorkout ? 'selected' : ''}`}
             onClick={() => setActiveWorkout(workout)}
         >
-            <div className="id">{workout._id}</div>
+            <div className="id">{workout.name}</div>
         </div>
     )
 }

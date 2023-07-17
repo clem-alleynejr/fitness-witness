@@ -5,6 +5,7 @@ module.exports = {
     unsavedWorkout,
     addToUnsavedWorkout,
     saveUnsavedWorkout,
+    setWorkoutName,
     setSetQtyInUnsavedWorkout,
     setRepQtyInUnsavedWorkout,
     index,
@@ -29,6 +30,13 @@ async function saveUnsavedWorkout(req, res) {
     const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
     unsavedWorkout.isSaved = true;
     await unsavedWorkout.save();
+    res.json(unsavedWorkout)
+}
+
+// Update the workout name in the unsaved workout
+async function setWorkoutName(req, res) {
+    const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
+    await unsavedWorkout.setWorkoutName(req.body.workoutId, req.body.newWorkoutName);
     res.json(unsavedWorkout)
 }
 

@@ -8,6 +8,8 @@ router.get('/unsavedWorkout', workoutsCtrl.unsavedWorkout);
 router.post('/unsavedWorkout/exercises/:id', workoutsCtrl.addToUnsavedWorkout);
 // POST /api/workouts/unsavedWorkout/saveWorkout
 router.post('/unsavedWorkout/saveUnsavedWorkout', workoutsCtrl.saveUnsavedWorkout);
+// PUT /api/workouts/unsavedWorkout/WorkoutName
+router.put('/unsavedWorkout/WorkoutName', workoutsCtrl.setWorkoutName);
 // PUT /api/workouts/unsavedWorkout/setQty
 router.put('/unsavedWorkout/setQty', workoutsCtrl.setSetQtyInUnsavedWorkout);
 // PUT /api/workouts/unsavedWorkout/repQty

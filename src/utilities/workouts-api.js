@@ -12,6 +12,12 @@ export function addExerciseToUnsavedWorkout(exerciseId) {
   return sendRequest(`${BASE_URL}/unsavedWorkout/exercises/${exerciseId}`, 'POST');
 }
 
+// Update Workout Name
+export function setWorkoutName(workoutId, newWorkoutName) {
+  return sendRequest(`${BASE_URL}/unsavedWorkout/WorkoutName`, 'PUT', { workoutId, newWorkoutName });
+}
+
+
 // Update the exercise's number of sets in the unsaved workout
 export function setExerciseSetQtyInUnsavedWorkout(exerciseId, newSetQty) {
   return sendRequest(`${BASE_URL}/unsavedWorkout/setQty`, 'PUT', { exerciseId, newSetQty });

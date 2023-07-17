@@ -1,7 +1,7 @@
 import './WorkoutDetail.css';
 import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
 
-export default function WorkoutDetail({ workout, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout }) {
+export default function WorkoutDetail({ workout, handleChangeWorkoutName, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout }) {
     if (!workout) return null;
 
     const exerciseChoices = workout.exerciseChoices.map(exercise =>
@@ -20,7 +20,10 @@ export default function WorkoutDetail({ workout, handleChangeSetQty, handleChang
                 {workout.isSaved ?
                     <span>{workout.name}</span>
                     :
+                    <>
                     <span>NEW WORKOUT</span>
+                    <input type="text" name="workoutName" onChange={(evt) => handleChangeWorkoutName(workout._id, evt.target.value)} />
+                    </>
                 }
             </div>
             <div className="line-item-container flex-ctr-ctr flex-col scroll-y">

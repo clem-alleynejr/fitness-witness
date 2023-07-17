@@ -41,6 +41,12 @@ workoutSchema.methods.addExerciseToUnsavedWorkout = async function(exerciseId) {
     return unsavedWorkout.save();
 }
 
+workoutSchema.methods.setWorkoutName= function(workoutId, newWorkoutName) {
+    const unsavedWorkout = this;
+    this.name = newWorkoutName
+    return unsavedWorkout.save()
+}
+
 workoutSchema.methods.setSetQty = function(exerciseId, newSetQty) {
     const unsavedWorkout = this;
     const exerciseChoice = unsavedWorkout.exerciseChoices.find(exerciseChoice => exerciseChoice.exercise._id.equals(exerciseId))

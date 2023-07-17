@@ -36,6 +36,11 @@ export default function NewWorkoutPage({ user, setUser }) {
         setUnsavedWorkout(updatedUnsavedWorkout)
     }
 
+    async function handleChangeWorkoutName(workoutId, newWorkoutName) {
+        const updatedUnsavedWorkout = await workoutsAPI.setWorkoutName(workoutId, newWorkoutName);
+        setUnsavedWorkout(updatedUnsavedWorkout)
+    }
+    
     async function handleChangeSetQty(exerciseId, newSetQty) {
         const updatedUnsavedWorkout = await workoutsAPI.setExerciseSetQtyInUnsavedWorkout(exerciseId, newSetQty);
         setUnsavedWorkout(updatedUnsavedWorkout)
@@ -67,6 +72,7 @@ export default function NewWorkoutPage({ user, setUser }) {
             />
             <WorkoutDetail 
                 workout={unsavedWorkout}
+                handleChangeWorkoutName={handleChangeWorkoutName}
                 handleChangeSetQty={handleChangeSetQty}
                 handleChangeRepQty={handleChangeRepQty}
                 handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}

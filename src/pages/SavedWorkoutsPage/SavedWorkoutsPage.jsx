@@ -18,6 +18,7 @@ export default function SavedWorkoutsPage() {
         getWorkouts();
     }, []);
 
+    
     async function handleDeleteWorkout(workoutId) {
         const updatedWorkoutList = await workoutsAPI.deleteSavedWorkout(workoutId)
         setWorkouts(updatedWorkoutList)
