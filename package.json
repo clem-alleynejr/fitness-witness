@@ -21,7 +21,7 @@
   "engines": {
     "node": "20.2.0",
     "npm": "9.6.6"
-},
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
