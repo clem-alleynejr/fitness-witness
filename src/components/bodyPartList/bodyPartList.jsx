@@ -5,14 +5,14 @@ export default function BodyPartList({ bodyParts, activeBodyPart, setActiveBodyP
     const formattedBP = bP.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
     return (
-      <a
+      <button
         key={bP}
         className={bP === activeBodyPart ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'}
         aria-current={activeBodyPart ? 'true' : 'false'}
         onClick={() => setActiveBodyPart(bP)}
       >
         {formattedBP}
-      </a>
+      </button>
     );
   });
 
