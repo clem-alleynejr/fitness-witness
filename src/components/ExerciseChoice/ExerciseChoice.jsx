@@ -26,7 +26,7 @@ export default function ExerciseChoice({ exerciseChoice, isSaved, handleChangeSe
 
                 <div className="sets">
                     {isSaved ?
-                        <p>{exerciseChoice.setQty}</p>
+                        <p>Sets: {exerciseChoice.setQty}</p>
                         :
                         <div className="mb-3">
                             <label htmlFor="sets" className='form-label'>Enter Sets:</label>
@@ -37,7 +37,7 @@ export default function ExerciseChoice({ exerciseChoice, isSaved, handleChangeSe
 
                 <div className="reps">
                     {isSaved ?
-                        <p>{exerciseChoice.repQty}</p>
+                        <p>Reps: {exerciseChoice.repQty}</p>
                         :
                         <div className="mb-3">
                             <label htmlFor='reps' className='form-label'>Enter Reps:</label>
