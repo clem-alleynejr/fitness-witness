@@ -39,7 +39,7 @@ export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsav
         const updatedUnsavedWorkout = await workoutsAPI.setWorkoutName(workoutId, newWorkoutName);
         setUnsavedWorkout(updatedUnsavedWorkout)
     }
-    
+
     async function handleChangeSetQty(exerciseId, newSetQty) {
         const updatedUnsavedWorkout = await workoutsAPI.setExerciseSetQtyInUnsavedWorkout(exerciseId, newSetQty);
         setUnsavedWorkout(updatedUnsavedWorkout)
@@ -47,7 +47,7 @@ export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsav
 
     async function handleChangeRepQty(exerciseId, newRepQty) {
         const updatedUnsavedWorkout = await workoutsAPI.setExerciseRepQtyInUnsavedWorkout(exerciseId, newRepQty);
-        setUnsavedWorkout(updatedUnsavedWorkout)        
+        setUnsavedWorkout(updatedUnsavedWorkout)
     }
 
     async function handleSaveUnsavedWorkout() {
@@ -57,22 +57,9 @@ export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsav
 
     return (
         <main className="NewWorkoutPage">
-            <aside>
-                <BodyPartList
-                    bodyParts={bodyPartRef.current}
-                    activeBodyPart={activeBodyPart}
-                    setActiveBodyPart={setActiveBodyPart}
-                />
-                <Link to="/workouts" className="button btn-sm">My Workouts</Link>
-            </aside>
+            <h1>New Workout Creator</h1>
 
-            <ExerciseOptionList
-                exerciseOptions={exerciseOptions.filter(exercise => exercise.bodyPart === activeBodyPart)}
-                handleAddToWorkout={handleAddToWorkout}
-                useState={useState}
-                activeBodyPart={activeBodyPart}
-            />
-            <WorkoutDetail 
+            <WorkoutDetail
                 workout={unsavedWorkout}
                 handleChangeWorkoutName={handleChangeWorkoutName}
                 handleChangeSetQty={handleChangeSetQty}
@@ -80,6 +67,19 @@ export default function NewWorkoutPage({ user, setUser, unsavedWorkout, setUnsav
                 handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}
                 editWorkout={editWorkout}
                 setEditWorkout={setEditWorkout}
+            />
+
+            <BodyPartList
+                bodyParts={bodyPartRef.current}
+                activeBodyPart={activeBodyPart}
+                setActiveBodyPart={setActiveBodyPart}
+            />
+
+            <ExerciseOptionList
+                exerciseOptions={exerciseOptions.filter(exercise => exercise.bodyPart === activeBodyPart)}
+                handleAddToWorkout={handleAddToWorkout}
+                useState={useState}
+                activeBodyPart={activeBodyPart}
             />
         </main>
     )

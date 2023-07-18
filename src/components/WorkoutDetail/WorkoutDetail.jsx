@@ -26,14 +26,17 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
         }
 
     return (
+
         <div className="WorkoutDetail">
             <div className="section-heading">
                 {workout.isSaved ?
                     <span>{workout.name}</span>
                     :
                     <>
-                    <span>Enter Workout Name:</span>
-                    <input type="text" name="workoutName" defaultValue={editWorkout? workout.name : ''} onChange={(evt) => handleChangeWorkoutName(workout._id, evt.target.value)} />
+                    <div class="mb-3">
+                    <label for="workoutName" className="form-label">New Workout Name:</label>
+                    <input id="workoutName" placeholder='Ex. "Leg Day"'type="text" className="form-control" defaultValue={editWorkout? workout.name : ''} onChange={(evt) => handleChangeWorkoutName(workout._id, evt.target.value)} />
+                    </div>
                     </>
                 }
             </div>
@@ -63,7 +66,7 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
                         </section>
                     </>
                     :
-                    <div className="doIt">Yesterday, you said tomorrow. So <img src="https://media.tenor.com/kA8khAUYJZ8AAAAC/shia-labeouf.gif" alt="JUST DO IT" /> </div>
+                    <div className="doIt">Add exercises from the right side of the page! <br /><br />Yesterday, you said tomorrow. So... <br /> <img src="https://media.tenor.com/kA8khAUYJZ8AAAAC/shia-labeouf.gif" alt="JUST DO IT" /> </div>
                 }
             </div>
         </div>

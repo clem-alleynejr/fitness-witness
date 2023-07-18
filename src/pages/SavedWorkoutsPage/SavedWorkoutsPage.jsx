@@ -59,17 +59,17 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, ed
 
     return (
         <main className="SavedWorkoutsPage">
-            <aside>
-                <h1>SavedWorkoutsPage</h1>
-                <Link to="/workouts/new" className="button btn-sm">Add New Workout</Link>
-            </aside>
+            <h1>My Workouts</h1>
 
-            {/* Render WorkoutList components */}
-            <WorkoutList
-                workouts={workouts}
-                activeWorkout={activeWorkout}
-                setActiveWorkout={setActiveWorkout}
-            />
+            <div className="WorkoutList">
+                <Link to="/workouts/new" className="button btn-sm">Add New Workout</Link>
+                {/* Render WorkoutList components */}
+                <WorkoutList
+                    workouts={workouts}
+                    activeWorkout={activeWorkout}
+                    setActiveWorkout={setActiveWorkout}
+                />
+            </div>
 
             {/* Render existing Workoutdetail component */}
             <WorkoutDetail
