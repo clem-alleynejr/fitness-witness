@@ -2,17 +2,18 @@ import './BodyPartList.css';
 
 export default function BodyPartList({ bodyParts, activeBodyPart, setActiveBodyPart }) {
   const bPs = bodyParts.map(bP =>
-    <li
+    <a
       key={bP}
-      className={bP === activeBodyPart ? 'active' : ''}
+      className={bP === activeBodyPart ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action'}
+      aria-current={activeBodyPart ? 'true' : 'false'}
       onClick={() => setActiveBodyPart(bP)}
     >
       {bP}
-    </li>
+    </a>
   );
   return (
-    <ul className="BodyPartList">
+    <div className="BodyPartList list-group">
       {bPs}
-    </ul>
+    </div>
   );
 }

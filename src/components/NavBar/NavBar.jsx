@@ -10,23 +10,29 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav className="navbar bg-body-tertiary">
-      <div className="container-fluid">
-        <Link to="/">Fitness Witness</Link>
-      </div>
-      &nbsp; | &nbsp;
+    <>
       {user ?
         <>
-          <Link to="/workouts" className="nav-link">My Workouts</Link>
-          &nbsp; | &nbsp;
-          <p>{user.name}</p>
-          &nbsp; | &nbsp;
-          <Link to="" onClick={handleLogOut}>Log Out</Link>
+          <nav className="navbar bg-body-tertiary">
+            <div className="container-fluid">
+              <Link to="/" className="navbar-brand">Fitness Witness</Link>
+              <Link to="/workouts" className="navbar-brand">My Workouts</Link>
+              <span className="navbar-brand mb-0 h1">{user.name}</span>
+              <Link to="" className="navbar-brand" onClick={handleLogOut}>Log Out</Link>
+            </div>
+          </nav>
         </>
         :
-        <Link to="/auth">Log In/Sign Up</Link>
+        <>
+          <nav className="navbar bg-body-tertiary">
+            <div className="container-fluid">
+              <Link to="/" className="navbar-brand">Fitness Witness</Link>
+              <Link to="/auth" className="navbar-brand">Log In/Sign Up</Link>
+            </div>
+          </nav>
+        </>
       }
-    </nav>
+    </>
   );
 }
 
