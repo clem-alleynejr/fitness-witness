@@ -14,7 +14,7 @@ export default function SavedWorkoutsPage({ unsavedWorkout, setUnsavedWorkout, e
         async function getWorkouts() {
             const workouts = await workoutsAPI.getAll();
             setWorkouts(workouts);
-            setActiveWorkout(workouts[0] || null);
+            setActiveWorkout(null);
         }
         getWorkouts();
     }, []);
