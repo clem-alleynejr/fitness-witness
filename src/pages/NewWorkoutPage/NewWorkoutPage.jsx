@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import './NewWorkoutPage.css';
 import * as exercisesAPI from '../../utilities/exercises-api'
 import * as workoutsAPI from '../../utilities/workouts-api'
-import BodyPartList from '../../components/BodyPartList/BodyPartList'
+import BodyPartList from '../../components/BodyPartList/BodyPartList';
 import ExerciseOptionList from '../../components/ExerciseOptionList/ExerciseOptionList'
 import WorkoutDetail from '../../components/WorkoutDetail/WorkoutDetail'
 
