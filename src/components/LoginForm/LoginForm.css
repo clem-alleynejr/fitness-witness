@@ -1,0 +1,44 @@
+.formcontainer {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(33, 30, 30);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .formcontainer label {
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .formcontainer input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .formcontainer button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3e0daa;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .formcontainer button:disabled {
+    background-color: #b29ff6;
+    cursor: not-allowed;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }
+  
