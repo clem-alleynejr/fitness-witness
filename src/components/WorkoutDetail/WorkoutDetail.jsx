@@ -3,7 +3,7 @@ import ExerciseChoice from '../ExerciseChoice/ExerciseChoice';
 import { useState } from 'react';
 
 
-export default function WorkoutDetail({ workout, handleChangeWorkoutName, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout, editWorkout, setEditWorkout }) {
+export default function WorkoutDetail({ workout, workouts, handleChangeWorkoutName, handleChangeSetQty, handleChangeRepQty, handleSaveUnsavedWorkout, handleDeleteWorkout, handleEditWorkout, editWorkout, setEditWorkout }) {
 
     if (!workout) return null;
 

@@ -5,7 +5,7 @@ import WorkoutList from '../../components/WorkoutList/WorkoutList'
 import WorkoutDetail from '../../components/WorkoutDetail/WorkoutDetail'
 import * as workoutsAPI from '../../utilities/workouts-api'
 
-export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, editWorkout, setEditWorkout}) {
+export default function SavedWorkoutsPage({ unsavedWorkout, setUnsavedWorkout, editWorkout, setEditWorkout }) {
     const [workouts, setWorkouts] = useState([]);
     const [activeWorkout, setActiveWorkout] = useState(null);
     const navigate = useNavigate()
@@ -19,11 +19,11 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, ed
         getWorkouts();
     }, []);
 
-    
+
     async function handleDeleteWorkout(workoutId) {
         const updatedWorkoutList = await workoutsAPI.deleteSavedWorkout(workoutId)
         setWorkouts(updatedWorkoutList)
-        setActiveWorkout(workouts[0] || null);
+        setActiveWorkout(null);
     }
 
     async function handleEditworkout(workoutId, newWorkoutName) {
@@ -37,7 +37,7 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, ed
         const updatedUnsavedWorkout = await workoutsAPI.setWorkoutName(workoutId, newWorkoutName);
         setUnsavedWorkout(updatedUnsavedWorkout)
     }
-    
+
     async function handleChangeSetQty(exerciseId, newSetQty) {
         const updatedUnsavedWorkout = await workoutsAPI.setExerciseSetQtyInUnsavedWorkout(exerciseId, newSetQty);
         setUnsavedWorkout(updatedUnsavedWorkout)
@@ -45,7 +45,7 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, ed
 
     async function handleChangeRepQty(exerciseId, newRepQty) {
         const updatedUnsavedWorkout = await workoutsAPI.setExerciseRepQtyInUnsavedWorkout(exerciseId, newRepQty);
-        setUnsavedWorkout(updatedUnsavedWorkout)        
+        setUnsavedWorkout(updatedUnsavedWorkout)
     }
 
     async function handleSaveUnsavedWorkout() {
@@ -72,18 +72,25 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, ed
                 />
             </div>
 
-            {/* Render existing Workoutdetail component */}
-            <WorkoutDetail
-                workout={activeWorkout}
-                handleDeleteWorkout={handleDeleteWorkout}
-                handleEditWorkout={handleEditworkout}
-                handleChangeWorkoutName={handleChangeWorkoutName}
-                handleChangeSetQty={handleChangeSetQty}
-                handleChangeRepQty={handleChangeRepQty}
-                handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}
-                editWorkout={editWorkout}
-                setEditWorkout={setEditWorkout}
-            />
+
+            {workouts ?
+
+                <WorkoutDetail
+                    workout={activeWorkout}
+                    handleDeleteWorkout={handleDeleteWorkout}
+                    handleEditWorkout={handleEditworkout}
+                    handleChangeWorkoutName={handleChangeWorkoutName}
+                    handleChangeSetQty={handleChangeSetQty}
+                    handleChangeRepQty={handleChangeRepQty}
+                    handleSaveUnsavedWorkout={handleSaveUnsavedWorkout}
+                    editWorkout={editWorkout}
+                    setEditWorkout={setEditWorkout}
+                    workouts={workouts}
+                />
+                :
+                <p></p>
+            }
+
 
         </main>
     );

@@ -15,4 +15,9 @@
   h1.SavedWorkout {
     color: white;
   }
+
+  h1.SavedWorkout {
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+  }
   
