@@ -19,10 +19,10 @@ export default function ExerciseChoice({ exerciseChoice, isSaved, handleChangeSe
         <div className='card'>
             <div className="card-body">
 
-                <h5 className="flex-ctr-ctr">{capitalizedExerciseName}</h5>
-                <p className="flex-ctr-ctr">Body Part: {capitalizedBodyPart}</p>
-                <p className="target">Target: {capitalizedTarget}</p>
-                <p className="flex-ctr-ctr">Equipment: {capitalizedEquipment}</p>
+                <h5 className="card-title">{capitalizedExerciseName}</h5>
+                <p>Body Part: {capitalizedBodyPart}</p>
+                <p>Target: {capitalizedTarget}</p>
+                <p>Equipment: {capitalizedEquipment}</p>
 
                 <div className="sets">
                     {isSaved ?

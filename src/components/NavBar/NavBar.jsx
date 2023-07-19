@@ -16,9 +16,11 @@ export default function NavBar({ user, setUser }) {
           <nav className="navbar bg-body-tertiary">
             <div className="container-fluid">
               <Link to="/" className="navbar-brand">Fitness Witness</Link>
-              <Link to="/workouts" className="navbar-brand">My Workouts</Link>
-              <span className="navbar-brand mb-0 h1">{user.name}</span>
-              <Link to="" className="navbar-brand" onClick={handleLogOut}>Log Out</Link>
+              <div className='ms-auto'>
+                <Link to="/workouts" className="navbar-brand">My Workouts</Link>
+                <span className="navbar-brand mb-0 h1">{user.name}</span>
+                <Link to="" className="navbar-brand" onClick={handleLogOut}>Log Out</Link>
+              </div>
             </div>
           </nav>
         </>
@@ -27,7 +29,9 @@ export default function NavBar({ user, setUser }) {
           <nav className="navbar bg-body-tertiary">
             <div className="container-fluid">
               <Link to="/" className="navbar-brand">Fitness Witness</Link>
-              <Link to="/auth" className="navbar-brand">Log In/Sign Up</Link>
+              <div className='ms-auto'>
+                <Link to="/auth" className="navbar-brand">Log In/Sign Up</Link>
+              </div>
             </div>
           </nav>
         </>
