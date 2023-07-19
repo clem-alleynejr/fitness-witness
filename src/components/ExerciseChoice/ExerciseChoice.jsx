@@ -16,7 +16,7 @@ export default function ExerciseChoice({ exerciseChoice, isSaved, handleChangeSe
     const capitalizedEquipment = capitalizeFirstLetter(exerciseChoice.exercise.equipment);
 
     return (
-        <div className='card'>
+        <div className='card text-bg-secondary mb-3'>
             <div className="card-body">
 
                 <h5 className="card-title">{capitalizedExerciseName}</h5>

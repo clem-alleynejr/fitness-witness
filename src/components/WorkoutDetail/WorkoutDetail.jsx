@@ -27,7 +27,6 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
 
     return (
 
-        // waffle
         <main className="WorkoutDetail">
             <div className="section-heading">
                 {workout.isSaved ?

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default function HomePage({ user }) {
     return (
         <>
-        <h1 className='home'>Welcome to Fitness Witness</h1>
+        <h1 className='home'>Welcome to </h1><br /><h1 className='home'>Fitness Witness</h1>
         <p className='home'>Keep yourself accountable on your fitness journey with the help of this app!</p>
         { user ?
             <Link to="/workouts/new" className="button btn-sm">Create a New Workout!</Link>

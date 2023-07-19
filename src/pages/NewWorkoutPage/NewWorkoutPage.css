@@ -9,6 +9,8 @@
   color: white;
   flex-basis: 100%;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 5rem;
 }
 
 .NewWorkoutPage .BodyPartList {
