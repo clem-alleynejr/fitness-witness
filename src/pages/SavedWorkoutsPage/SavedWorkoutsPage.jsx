@@ -59,7 +59,7 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, ed
 
     return (
         <main className="SavedWorkoutsPage">
-            <h1>My Workouts</h1>
+            <h1 className='SavedWorkout'>My Workouts</h1>
 
             <div className="WorkoutList">
 

@@ -21,7 +21,8 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-image: linear-gradient(rgba(10, 39, 51, .8), rgba(10, 39, 51, .8)), url(./images/fitnessWitnessBG.png);
+  background-size: auto, cover;
   padding: 2vmin;
   height: 100vh;
 }

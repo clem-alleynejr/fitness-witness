@@ -31,7 +31,7 @@ export default function WorkoutDetail({ workout, handleChangeWorkoutName, handle
         <main className="WorkoutDetail">
             <div className="section-heading">
                 {workout.isSaved ?
-                    <span>{workout.name}</span>
+                    <h2>{workout.name}</h2>
                     :
                     <>
                         <div class="mb-3">

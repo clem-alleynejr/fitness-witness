@@ -11,4 +11,8 @@
   .WorkoutDetail {
     flex: 1;
   }
+
+  h1.SavedWorkout {
+    color: white;
+  }
   

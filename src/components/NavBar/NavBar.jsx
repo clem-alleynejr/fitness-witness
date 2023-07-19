@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
     <>
       {user ?
         <>
-          <nav className="navbar bg-body-tertiary">
+          <nav className="navbar bg-dark navbar-dark">
             <div className="container-fluid">
               <Link to="/" className="navbar-brand">Fitness Witness</Link>
               <div className='ms-auto'>

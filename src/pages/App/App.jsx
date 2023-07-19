@@ -23,7 +23,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
 
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage user={user} />} />
 
             <Route path="/workouts/new" element={<NewWorkoutPage user={user} setUser={setUser} unsavedWorkout={unsavedWorkout} setUnsavedWorkout={setUnsavedWorkout} editWorkout={editWorkout} setEditWorkout={setEditWorkout} />} />
             <Route path="/workouts" element={<SavedWorkoutsPage unsavedWorkout={unsavedWorkout} setUnsavedWorkout={setUnsavedWorkout} editWorkout={editWorkout} setEditWorkout={setEditWorkout} />} />
@@ -36,7 +36,7 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
 
           <Routes>
-            <Route path="/" element={<HomePage />} />
+            <Route path="/" element={<HomePage user={user} />} />
             
             <Route path="/auth" element={<AuthPage setUser={setUser}/>}  />
           </Routes>

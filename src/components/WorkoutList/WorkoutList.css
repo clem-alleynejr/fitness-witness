@@ -5,3 +5,7 @@ margin-bottom: 10px;
 .list-group {
 margin-top: 10px;
 }
+
+h6.WorkoutList {
+    color: white;
+}

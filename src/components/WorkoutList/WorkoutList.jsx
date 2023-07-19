@@ -16,7 +16,7 @@ export default function WorkoutList({ workouts, activeWorkout, setActiveWorkout 
         <>
         <Link to="/workouts/new" className="button btn-sm">Add New Workout</Link>
         <div className="list-group">
-            <h6>Select Saved Workout to View Details:</h6>
+            <h6 className='WorkoutList'>Select Saved Workout to View Details:</h6>
             {workoutCards}
         </div>
         </>
