@@ -1,32 +1,14 @@
 .SavedWorkoutsPage {
     display: flex;
-    flex-direction: column;
-  }
-  
-  .WorkoutListSection {
-    display: flex;
+    justify-content: space-between;
   }
   
   .WorkoutList {
     flex: 1;
+    margin-right: 20px;
   }
   
   .WorkoutDetail {
     flex: 1;
-  }
-  
-  h1 {
-    margin-top: 0;
-  }
-  
-  @media (min-width: 768px) {
-    .SavedWorkoutsPage {
-      flex-direction: row;
-    }
-  
-    .WorkoutListSection {
-      flex: 1;
-      margin-right: 20px;
-    }
   }
   

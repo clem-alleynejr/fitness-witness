@@ -62,7 +62,8 @@ export default function SavedWorkoutsPage({unsavedWorkout, setUnsavedWorkout, ed
             <h1>My Workouts</h1>
 
             <div className="WorkoutList">
-                <Link to="/workouts/new" className="button btn-sm">Add New Workout</Link>
+
+                <br />
                 {/* Render WorkoutList components */}
                 <WorkoutList
                     workouts={workouts}
