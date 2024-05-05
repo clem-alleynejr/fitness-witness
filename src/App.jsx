@@ -22,6 +22,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage user={user} />} />
 
+          {/* Non-users won't have access to the workouts page */}
           {user ? (
             <Route
               path="/workouts"
