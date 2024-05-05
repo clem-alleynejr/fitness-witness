@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
 import "./App.css";
-import HomePage from "./HomePage/HomePage";
-import AuthPage from "../pages/AuthPage/AuthPage";
+import HomePage from "./pages/HomePage/HomePage";
+import AuthPage from "./pages/AuthPage/AuthPage";
 import NewWorkoutPage from "./pages/NewWorkoutPage/NewWorkoutPage";
 import SavedWorkoutsPage from "./pages/SavedWorkoutsPage/SavedWorkoutsPage";
 
