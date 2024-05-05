@@ -16,13 +16,13 @@ export default function App() {
 
   return (
     <main className="App">
-      {user ? (
-        <>
-          <NavBar user={user} setUser={setUser} />
+      <NavBar user={user} setUser={setUser} />
 
-          <Routes>
-            <Route path="/" element={<HomePage user={user} />} />
+      <div className="page">
+        <Routes>
+          <Route path="/" element={<HomePage user={user} />} />
 
+          {user ? (
             <Route
               path="/workouts"
               element={
@@ -34,21 +34,13 @@ export default function App() {
                 />
               }
             />
-
-            <Route path="/*" element={<Navigate to="/" />} />
-          </Routes>
-        </>
-      ) : (
-        <>
-          <NavBar user={user} setUser={setUser} />
-
-          <Routes>
-            <Route path="/" element={<HomePage user={user} />} />
-
+          ) : (
             <Route path="/auth" element={<AuthPage setUser={setUser} />} />
-          </Routes>
-        </>
-      )}
+          )}
+
+          <Route path="/*" element={<Navigate to="/" />} />
+        </Routes>
+      </div>
     </main>
   );
 }
