@@ -34,20 +34,6 @@ export default function App() {
                 />
               }
             />
-            <Route
-              path="/workouts/new"
-              element={
-                <NewWorkoutPage
-                  user={user}
-                  setUser={setUser}
-                  unsavedWorkout={unsavedWorkout}
-                  setUnsavedWorkout={setUnsavedWorkout}
-                  editWorkout={editWorkout}
-                  setEditWorkout={setEditWorkout}
-                />
-              }
-            />
-            <Route path="/workouts/:id" element={<WorkoutDetail />} />
 
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
