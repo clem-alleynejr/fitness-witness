@@ -26,22 +26,32 @@ export default function NavBar({ user, setUser }) {
 
         <div className="collapsible-nav">
           <ul className="nav-links">
-            <li>
-              <Link to={user ? "/workouts" : "/auth"} className="navbar-brand">
+            <li className="nav-item">
+              <Link to={user ? "/workouts" : "/auth"}>
                 My Workouts
+              </Link>
+              </li>
+              <li className="nav-item">
+              <Link to={user ? "/workouts/new" : "/auth"}>
+                Create Workout
               </Link>
             </li>
           </ul>
 
           <ul className="auth-links">
             {user ? (
-              <li>
-                <Link to="" className="navbar-brand" onClick={handleLogOut}>
+              <div className="username-logout">
+              <li className="nav-item">
+                {user.name}
+              </li>
+              <li className="nav-item">
+                <Link to="" onClick={handleLogOut}>
                   Log Out
                 </Link>
               </li>
+              </div>
             ) : (
-              <li>
+              <li className="nav-item">
                 <Link to="/auth" className="navbar-brand">
                   Log In/Sign Up
                 </Link>

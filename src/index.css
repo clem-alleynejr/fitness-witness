@@ -50,6 +50,14 @@ body {
   text-decoration: none;
 }
 
+.main-nav .nav-links a {
+  color: orange;
+}
+
+.main-nav .username-logout li:first-child {
+  color: white;
+}
+
 .main-nav .collapsible-nav {
   display: flex;
   justify-content: space-between;
@@ -60,6 +68,16 @@ body {
 .main-nav .collapsible-nav ul {
   margin: 0;
   padding: 0;
+}
+
+.main-nav .username-logout {
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav .nav-links {
+  display: flex;
+  gap: 20px;
 }
 
 
