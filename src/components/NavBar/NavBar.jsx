@@ -13,11 +13,14 @@ export default function NavBar({ user, setUser }) {
     <>
       {user ?
         <>
+
+
+        
           <nav className="navbar bg-dark navbar-dark">
             <div className="container-fluid">
-              <Link to="/" className="navbar-brand">
+              <Link to="/" className="navbar-brand home">
               <img src="https://images-platform.99static.com/Lw8CyZQrGrnlyPa-QHw8p4Tn7Nw=/200x200:1800x1800/500x500/top/smart/99designs-contests-attachments/121/121893/attachment_121893514" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
-                Fitness Witness
+                <span>Fitness Witness</span>
                 </Link>
               <div className='ms-auto'>
                 <Link to="/workouts" className="navbar-brand">My Workouts</Link>
