@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
-import HomePage from "./pages/HomePage/HomePage";
+import HomePage from "./pages/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import NewWorkoutPage from "./pages/NewWorkoutPage/NewWorkoutPage";
 import SavedWorkoutsPage from "./pages/SavedWorkoutsPage/SavedWorkoutsPage";
 
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/NavBar";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -21,7 +21,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage user={user} />} />
 
-          {/* Non-users won't have access to the workouts page */}
+          {/* Non-users will be redirected to auth */}
           {user ? (
             <Route
               path="/workouts"

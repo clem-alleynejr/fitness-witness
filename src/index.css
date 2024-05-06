@@ -6,6 +6,16 @@
   width: 100vw;
 }
 
+body {
+  background-image: linear-gradient(rgba(10, 39, 51, .8), rgba(10, 39, 51, .8)), url(./images/fitnessWitnessBG.png);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 /* Top (main) Nav Bar */
 
 .main-nav .navbar {
@@ -94,9 +104,30 @@
   border-radius: 20px;
 }
 
+.home-page .button {
+  background-color: orange;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+
+
+
+
+
+
+
+
 
 /* CSS Custom Properties */
-:root {
+
+
+
+/* :root {
   --white: #FFFFFF;
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
@@ -209,8 +240,11 @@ input {
   font-size: 2vmin;
   border: .1vmin solid var(--tan-3);
   border-radius: .5vmin;
-  color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
+  color: var(--text-dark); */
+
+  /* prevent lastpass */
+  /* background-image: none !important; 
+  
   outline: none;
 }
 
@@ -251,4 +285,4 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+} */

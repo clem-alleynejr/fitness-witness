@@ -1,3 +1,5 @@
+import { Routes } from "react-router-dom";
+
 export default function App() {
     const [user, setUser] = useState(getUser());
     const [unsavedWorkout, setUnsavedWorkout] = useState(null);
@@ -5,9 +7,15 @@ export default function App() {
   
     return (
       <main className="workouts-page">
+
+        <Routes>
+            <Route>
+                
+            </Route>
+
+        </Routes>
         {user ? (
           <>
-            <NavBar user={user} setUser={setUser} />
 
             <Route
                 path="/workouts/new"
