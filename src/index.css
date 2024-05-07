@@ -1,3 +1,5 @@
+/* Mobile-first design */
+
 .App {
   display: flex;
   flex-direction: column;
@@ -19,12 +21,12 @@ body {
 /* Top (main) Nav Bar */
 
 .main-nav .navbar {
-  margin-top: 20px; 
+  margin-top: 16px; 
   justify-content: space-between;
   align-items: center;
   width: 90vw;
   background-color: black;
-  padding: 20px;
+  padding: 16px;
   border-radius: 15px;
 }
 
@@ -36,10 +38,12 @@ body {
   align-items: center;
   justify-content: center;
   gap: 5px;
+  font-size: 1rem;
 }
 
 .main-nav .nav-toggle-button {
-  display: none;
+  color: orange;
+  font-size: 1.5rem;
 }
 
 .main-nav ul {
@@ -60,6 +64,7 @@ body {
 
 .main-nav .collapsible-nav {
   display: flex;
+  display: none;
   justify-content: space-between;
   flex-grow: 1;
   margin-left: 20px;
@@ -118,7 +123,8 @@ body {
   align-items: center;
   gap: 15px;
   background: black;
-  padding: 25px;
+  padding: 16px;
+  margin: 16px;
   border-radius: 20px;
 }
 

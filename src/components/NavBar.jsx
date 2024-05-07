@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import * as userService from "../utilities/users-service";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar({ user, setUser }) {
   function handleLogOut() {
@@ -22,7 +24,7 @@ export default function NavBar({ user, setUser }) {
           Fitness Witness
         </Link>
 
-        <button className="nav-toggle-button"></button>
+        <FontAwesomeIcon icon={faBars} className="nav-toggle-button" />
 
         <div className="collapsible-nav">
           <ul className="nav-links">
@@ -52,8 +54,8 @@ export default function NavBar({ user, setUser }) {
               </div>
             ) : (
               <li className="nav-item">
-                <Link to="/auth" className="navbar-brand">
-                  Log In/Sign Up
+                <Link to="/auth">
+                  Log In / Sign Up
                 </Link>
               </li>
             )}
