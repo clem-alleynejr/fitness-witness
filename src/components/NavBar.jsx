@@ -20,6 +20,8 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className="main-nav">
       <div className="navbar">
+
+        <div className="brand-and-toggle">
         <Link to="/" className="navbar-brand">
           <img
             src="https://images-platform.99static.com/Lw8CyZQrGrnlyPa-QHw8p4Tn7Nw=/200x200:1800x1800/500x500/top/smart/99designs-contests-attachments/121/121893/attachment_121893514"
@@ -37,12 +39,13 @@ export default function NavBar({ user, setUser }) {
         className={`close-nav-button ${navCollapsed ? 'hidden' : ''} `}
       />
 
-
         <FontAwesomeIcon 
         onClick={() => setNavCollapsed(false)}
         icon={faBars} 
         className={`nav-toggle-button ${navCollapsed ? '' : 'hidden'} `}
       />
+
+</div>
 
         <div className={`collapsible-nav ${navCollapsed ? 'hidden' : ''} `}>
           <ul className="nav-links">
