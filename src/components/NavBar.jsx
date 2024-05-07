@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import * as userService from "../utilities/users-service";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { 
+  faBars,
+  faClose
+} from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export default function NavBar({ user, setUser }) {
+  const [navCollapsed, setNavCollapsed] = useState(true);
+  
   function handleLogOut() {
     // Delegate to the users-service
     userService.logOut();
@@ -24,7 +30,19 @@ export default function NavBar({ user, setUser }) {
           Fitness Witness
         </Link>
 
-        <FontAwesomeIcon icon={faBars} className="nav-toggle-button" />
+
+      <FontAwesomeIcon
+        onClick={() => setNavCollapsed(true)}
+        icon={faClose}
+        className={`close-nav-button ${navCollapsed ? 'hidden' : ''} `}
+      />
+
+
+        <FontAwesomeIcon 
+        onClick={() => setNavCollapsed(false)}
+        icon={faBars} 
+        className={`nav-toggle-button ${navCollapsed ? '' : 'hidden'} `}
+      />
 
         <div className="collapsible-nav">
           <ul className="nav-links">

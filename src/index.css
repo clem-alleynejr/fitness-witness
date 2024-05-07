@@ -39,11 +39,18 @@ body {
   justify-content: center;
   gap: 5px;
   font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
-.main-nav .nav-toggle-button {
+.main-nav .nav-toggle-button,
+.main-nav .close-nav-button {
   color: orange;
   font-size: 1.5rem;
+}
+
+.main-nav .nav-toggle-button.hidden,
+.main-nav .close-nav-button.hidden {
+  display: none;
 }
 
 .main-nav ul {
@@ -99,6 +106,10 @@ body {
 
 .home-page .welcome-title-description {
   color: white;
+  
+}
+
+.home-page h1 {
   font-family: 'Roboto', sans-serif;
 }
 

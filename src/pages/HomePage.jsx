@@ -5,7 +5,7 @@ export default function HomePage({ user }) {
     <main className="home-page">
       <div className="welcome-and-button">
         <div className="welcome-title-description">
-          <h4>Welcome to </h4>
+          <h7>Welcome to </h7>
 
           <h1>Fitness Witness</h1>
 
