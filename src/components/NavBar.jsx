@@ -44,7 +44,7 @@ export default function NavBar({ user, setUser }) {
         className={`nav-toggle-button ${navCollapsed ? '' : 'hidden'} `}
       />
 
-        <div className="collapsible-nav">
+        <div className={`collapsible-nav ${navCollapsed ? 'hidden' : ''} `}>
           <ul className="nav-links">
             <li className="nav-item">
               <Link to={user ? "/workouts" : "/auth"}>
