@@ -12,10 +12,8 @@ const exerciseChoiceSchema = new Schema({
 })
 
 const workoutSchema =  new Schema({
-    user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     name: { type: String, default: '' },
-    exerciseChoices: [exerciseChoiceSchema],
-    isSaved: { type: Boolean, default: false },
+    exercises: [exerciseSchema]
 }, {
     timestamps: true
 })
