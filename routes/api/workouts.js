@@ -16,8 +16,15 @@ router.put('/unsavedWorkout/setQty', workoutsCtrl.setSetQtyInUnsavedWorkout);
 router.put('/unsavedWorkout/repQty', workoutsCtrl.setRepQtyInUnsavedWorkout);
 
 router.get('/', workoutsCtrl.index);
-router.put('/editWorkout', workoutsCtrl.editWorkout)
-router.delete('/:id', workoutsCtrl.deleteSavedWorkout)
+router.get('/new', workoutsCtrl.new);
+router.get('/:id', workoutsCtrl.show);
+router.get('/:id/edit', workoutsCtrl.edit);
+
+router.post('/', workoutsCtrl.create);
+
+router.put('/:id', workoutsCtrl.update)
+
+router.delete('/:id', workoutsCtrl.delete)
 
 module.exports = router;
 

@@ -1,4 +1,5 @@
-const Schema = require('mongoose').Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const exerciseSchema =  new Schema({
     setQty: { type: String, default: '' },
@@ -8,4 +9,6 @@ const exerciseSchema =  new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('Exercise', exerciseSchema);
+module.exports.exerciseSchema = exerciseSchema;
+
+module.exports.Exercise = mongoose.model('Exercise', exerciseSchema);

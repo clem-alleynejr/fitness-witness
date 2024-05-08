@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const exerciseSchema = require('./exercise')
+const { exerciseSchema } = require('./exercise')
 
 const exerciseChoiceSchema = new Schema({
     // sets and reps will be strings to allow users to input range (ex. '8-10')
@@ -60,4 +60,6 @@ workoutSchema.methods.setRepQty = function(exerciseId, newRepQty) {
 }
 
 
-module.exports = mongoose.model('Workout', workoutSchema)
+module.exports.workoutSchema = workoutSchema
+
+module.exports.Workout = mongoose.model('Workout', workoutSchema)
