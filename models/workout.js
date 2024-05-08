@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const exerciseSchema = require('./exerciseSchema')
+const exerciseSchema = require('./exercise')
 
 const exerciseChoiceSchema = new Schema({
     // sets and reps will be strings to allow users to input range (ex. '8-10')
