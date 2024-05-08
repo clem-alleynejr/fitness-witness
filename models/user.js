@@ -17,10 +17,7 @@ const userSchema = new Schema({
       type: String,
       required: true
     },
-    workoutIDs: [{
-      Type: Types.ObjectId,
-      ref: 'Workout'
-    }]
+    workouts: [workoutSchema]
 }, {
     timestamps: true,
   // Even though it's hashed - don't serialize/include
