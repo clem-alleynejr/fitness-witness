@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const exerciseSchema =  new Schema({
-    setQty: { type: String, default: '' },
-    repQty: { type: String, default: '' },
     name: { type: String, required: true },
+    exerciseInfo: { type: Object},
+    setQty: { type: String, default: '' },
+    repQty: { type: String, default: '' }
 }, {
     timestamps: true
 });

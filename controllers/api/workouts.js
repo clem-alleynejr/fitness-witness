@@ -10,8 +10,45 @@ module.exports = {
     setRepQtyInUnsavedWorkout,
     index,
     deleteSavedWorkout,
-    editWorkout
+    editWorkout,
+    new: newWorkout,
+    show,
+    edit,
+    create,
+    update,
+    delete: deleteWorkout
 };
+
+
+function index(req, res) {
+    const workouts = req.user.workouts;
+    res.json(workouts);
+}
+
+function newWorkout(req, res) {
+
+}
+
+function show(req, res) {
+
+}
+
+function edit(req, res) {
+
+}
+
+function create(req, res) {
+
+}
+
+function update(req, res) {
+
+}
+
+function deleteWorkout(req, res) {
+
+}
+
 
 
 async function unsavedWorkout(req, res) {
@@ -55,10 +92,7 @@ async function setRepQtyInUnsavedWorkout(req, res) {
     res.json(unsavedWorkout)
 }
 
-async function index(req, res) {
-    const workouts = await Workout.find({ user: req.user._id }).exec()
-    res.json(workouts)
-}
+
 
 async function deleteSavedWorkout(req, res) {
     await Workout.findOneAndDelete({ _id: req.params.id})
