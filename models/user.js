@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Types = mongoose.Types
 const SALT_ROUNDS = 6;  // 6 is a reasonable value
 const bcrypt = require('bcrypt');
 
@@ -15,7 +16,11 @@ const userSchema = new Schema({
     password: {
       type: String,
       required: true
-    }
+    },
+    workoutIDs: [{
+      Type: Types.ObjectId,
+      ref: 'Workout'
+    }]
 }, {
     timestamps: true,
   // Even though it's hashed - don't serialize/include
