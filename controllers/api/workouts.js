@@ -1,45 +1,55 @@
-const Workout = require('../../models/workout');
-// const Item = require('../../models/item');
+const Workout = require("../../models/workout");
+const User = require("../../models/user");
 
 module.exports = {
-    // unsavedWorkout,
-    // addToUnsavedWorkout,
-    // saveUnsavedWorkout,
-    // setWorkoutName,
-    // setSetQtyInUnsavedWorkout,
-    // setRepQtyInUnsavedWorkout,
-    // deleteSavedWorkout,
-    // editWorkout,
-    index,
-    show,
-    create,
-    update,
-    delete: deleteWorkout
+  // unsavedWorkout,
+  // addToUnsavedWorkout,
+  // saveUnsavedWorkout,
+  // setWorkoutName,
+  // setSetQtyInUnsavedWorkout,
+  // setRepQtyInUnsavedWorkout,
+  // deleteSavedWorkout,
+  // editWorkout,
+  index,
+  show,
+  create,
+  update,
+  delete: deleteWorkout,
 };
 
-
-function index(req, res) {
-    const workouts = req.user.workouts;
-    res.json(workouts);
+async function index(req, res) {
+    try {
+        const user = await User.findById(req.user._id);
+        const workouts = user.workouts;
+        res.json(workouts);
+    } catch (error) {
+        res.status(500).json({ message: 'Failed to retreive workouts'});
+    }
 }
 
-function show(req, res) {
+function show(req, res) {}
 
+async function create(req, res) {
+  try {
+    const user = await User.findById(req.user._id);
+    const { name, exercises } = req.body;
+
+    // Create new workout
+    const newWorkout = await Workout.create({ name, exercises });
+
+    // Add new workout to logged-in user's workouts
+    user.workouts.push(newWorkout);
+    await user.save()
+
+    res.json(newWorkout);
+  } catch (error) {
+    res.status(500).json({ message: 'Failed to create workout'});
+  }
 }
 
-function create(req, res) {
+function update(req, res) {}
 
-}
-
-function update(req, res) {
-
-}
-
-function deleteWorkout(req, res) {
-
-}
-
-
+function deleteWorkout(req, res) {}
 
 // async function unsavedWorkout(req, res) {
 //     const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);
@@ -81,8 +91,6 @@ function deleteWorkout(req, res) {
 //     await unsavedWorkout.setRepQty(req.body.exerciseId, req.body.newRepQty);
 //     res.json(unsavedWorkout)
 // }
-
-
 
 // async function deleteSavedWorkout(req, res) {
 //     await Workout.findOneAndDelete({ _id: req.params.id})
