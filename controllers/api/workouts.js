@@ -23,15 +23,7 @@ function index(req, res) {
     res.json(workouts);
 }
 
-function newWorkout(req, res) {
-
-}
-
 function show(req, res) {
-
-}
-
-function edit(req, res) {
 
 }
 
