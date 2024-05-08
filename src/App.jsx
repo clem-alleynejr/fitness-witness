@@ -1,7 +1,8 @@
+import './App.css'
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { getUser } from "./utilities/users-service";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import SavedWorkoutsPage from "./pages/SavedWorkoutsPage/SavedWorkoutsPage";
 import WorkoutsIndexPage from "./pages/Workouts/WorkoutsIndexPage";
@@ -9,7 +10,7 @@ import NewWorkoutPage from "./pages/Workouts/NewWorkoutPage";
 import ShowWorkoutPage from "./pages/Workouts/ShowWorkoutPage";
 import EditWorkoutPage from "./pages/Workouts/EditWorkoutPage";
 
-import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar/NavBar";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
