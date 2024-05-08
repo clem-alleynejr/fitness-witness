@@ -16,9 +16,7 @@ const workoutsCtrl = require('../../controllers/api/workouts');
 // router.put('/unsavedWorkout/repQty', workoutsCtrl.setRepQtyInUnsavedWorkout);
 
 router.get('/', workoutsCtrl.index);
-router.get('/new', workoutsCtrl.new);
 router.get('/:id', workoutsCtrl.show);
-router.get('/:id/edit', workoutsCtrl.edit);
 
 router.post('/', workoutsCtrl.create);
 
