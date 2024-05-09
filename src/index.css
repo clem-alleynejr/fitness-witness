@@ -1,5 +1,37 @@
+/* Mobile-first design */
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Page Content */
+
+.page {
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /* CSS Custom Properties */
-:root {
+
+
+
+/* :root {
   --white: #FFFFFF;
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
@@ -14,8 +46,6 @@
   box-sizing: border-box;
 }
 
-
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,9 +54,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(rgba(10, 39, 51, .8), rgba(10, 39, 51, .8)), url(./images/fitnessWitnessBG.png);
-  background-size: auto, cover;
-  padding: 2vmin;
+  background-size: cover;
   height: 100vh;
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 code {
@@ -111,8 +144,11 @@ input {
   font-size: 2vmin;
   border: .1vmin solid var(--tan-3);
   border-radius: .5vmin;
-  color: var(--text-dark);
-  background-image: none !important; /* prevent lastpass */
+  color: var(--text-dark); */
+
+  /* prevent lastpass */
+  /* background-image: none !important; 
+  
   outline: none;
 }
 
@@ -153,4 +189,4 @@ button:disabled, form:invalid button[type="submit"] {
 button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
-}
+} */

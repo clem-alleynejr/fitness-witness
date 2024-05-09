@@ -1,12 +1,47 @@
 
-h1.home {
-    color: white;
-    font-size: 9em;
-    font-family: 'Roboto', sans-serif;
-}
+/* Home Page */
 
-p.home {
+.home-page .welcome-title-description {
     color: white;
-    font-size: 2em;
+    
+  }
+  
+  .home-page h1 {
     font-family: 'Roboto', sans-serif;
-}
+  }
+  
+  .home-page a.button {
+    display: inline-block;
+  }
+  
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .home-page .welcome-title-description {
+    text-align: center;
+  }
+  
+  .home-page .welcome-and-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background: black;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 20px;
+  }
+  
+  .home-page .button {
+    background-color: orange;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+  }

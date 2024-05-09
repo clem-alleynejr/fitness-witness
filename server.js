@@ -26,7 +26,6 @@ const port = process.env.PORT || 3001;
 app.use('/api/users', require('./routes/api/users'));
 
 const ensureLoggedIn = require('./config/ensureLoggedIn');
-app.use('/api/exercises', ensureLoggedIn, require('./routes/api/exercises'));
 app.use('/api/workouts', ensureLoggedIn, require('./routes/api/workouts'));
 
 

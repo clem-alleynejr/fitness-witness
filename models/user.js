@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Types = mongoose.Types
 const SALT_ROUNDS = 6;  // 6 is a reasonable value
 const bcrypt = require('bcrypt');
+const { workoutSchema } = require('./workout')
 
 const userSchema = new Schema({
     name: {type: String, required: true},
