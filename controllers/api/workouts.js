@@ -31,15 +31,15 @@ async function show(req, res) {
   try {
     const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
-        throw new Error ('ID is not valid')
+      throw new Error("Workout ID is not valid");
     }
     const workout = await Workout.findById(id);
     if (!workout) {
-        throw new Error ('Workout not found');
+      throw new Error("Workout not found");
     }
     res.json(workout);
-  } catch (e) {
-    res.status(500).json(e);
+  } catch (error) {
+    res.status(500).json(error);
   }
 }
 
@@ -63,7 +63,20 @@ async function create(req, res) {
 
 function update(req, res) {}
 
-function deleteWorkout(req, res) {}
+async function deleteWorkout(req, res) {
+  try {
+    const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      throw new Error("Workout ID is not valid");
+    }
+    const workout = await Workout.findOneAndDelete({ _id: id });
+    if (!workout) {
+      throw new Error("Workout not found");
+    }
+  } catch (error) {
+    res.status(400).json(error);
+  }
+}
 
 // async function unsavedWorkout(req, res) {
 //     const unsavedWorkout = await Workout.getUnsavedWorkout(req.user._id);

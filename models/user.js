@@ -17,8 +17,7 @@ const userSchema = new Schema({
     password: {
       type: String,
       required: true
-    },
-    workouts: [workoutSchema]
+    }
 }, {
     timestamps: true,
   // Even though it's hashed - don't serialize/include
