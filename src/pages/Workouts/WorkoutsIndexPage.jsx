@@ -1,16 +1,15 @@
 import { Routes } from "react-router-dom";
 
 export default function WorkoutsIndexPage() {
+  
+  useEffect(() => {
+    const fetchWorkouts = aswync () => {
+      const response = await fetch('')
+    }
 
-    return (
-      <h1>hello</h1>
-    );
-  }
+    fetchWorkouts()
 
+  })
 
-
-
-
-
-
-
+  return <h1>hello</h1>;
+}

@@ -23,10 +23,10 @@ export default function App() {
 
       <div className="page">
         <Routes>
-          {/* Home Route*/}
+          {/* Home Page*/}
           <Route path="/" element={<HomePage user={user} />} />
 
-          {/* Workout Related Routes */}
+          {/* Workout Related Pages */}
           {user ? (
             <>
               <Route path="/workouts" element={<WorkoutsIndexPage />} />
@@ -35,7 +35,7 @@ export default function App() {
               <Route path="/workouts/:id/edit" element={<EditWorkoutPage />} />
             </>
           ) : (
-            // Auth Route (No User)
+            // Auth Page (No User)
             <Route path="/auth" element={<AuthPage setUser={setUser} />} />
           )}
 
