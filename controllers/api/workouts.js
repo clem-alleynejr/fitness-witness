@@ -18,16 +18,24 @@ module.exports = {
 };
 
 async function index(req, res) {
-    try {
-        const user = await User.findById(req.user._id);
-        const workouts = user.workouts;
-        res.json(workouts);
-    } catch (error) {
-        res.status(500).json({ message: 'Failed to retreive workouts'});
-    }
+  try {
+    const user = await User.findById(req.user._id);
+    const workouts = user.workouts;
+    res.json(workouts);
+  } catch (error) {
+    res.status(500).json({ message: "Failed to retreive workouts" });
+  }
 }
 
-function show(req, res) {}
+async function show(req, res) {
+  try {
+    const { id } = req.params;
+    const workout = await Workout.findById(id);
+    res.json(workout);
+  } catch {
+    res.status(500).json({ message: "Workout not found" });
+  }
+}
 
 async function create(req, res) {
   try {
@@ -39,11 +47,11 @@ async function create(req, res) {
 
     // Add new workout to logged-in user's workouts
     user.workouts.push(newWorkout);
-    await user.save()
+    await user.save();
 
     res.json(newWorkout);
   } catch (error) {
-    res.status(500).json({ message: 'Failed to create workout'});
+    res.status(500).json({ message: "Failed to create workout" });
   }
 }
 
