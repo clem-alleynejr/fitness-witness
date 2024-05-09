@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const { exerciseSchema } = require('./exercise')
 
 // const exerciseChoiceSchema = new Schema({
 //     // sets and reps will be strings to allow users to input range (ex. '8-10')
@@ -10,6 +9,15 @@ const { exerciseSchema } = require('./exercise')
 // }, {
 //     timestamps: true
 // })
+
+const exerciseSchema =  new Schema({
+    name: { type: String, required: true },
+    exerciseInfo: { type: Object},
+    setQty: { type: String, default: '' },
+    repQty: { type: String, default: '' }
+}, {
+    timestamps: true
+});
 
 const workoutSchema =  new Schema({
     name: { type: String, default: '' },
