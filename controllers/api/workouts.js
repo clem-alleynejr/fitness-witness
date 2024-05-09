@@ -57,7 +57,24 @@ async function create(req, res) {
   }
 }
 
-function update(req, res) {}
+async function update(req, res) {
+  const id = req.params.id;
+  const userID = req.user._id;
+  try {
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      throw new Error("Workout ID is not valid");
+    }
+
+    const workout = await Workout.findOneAndUpdate(
+      { _id: id, userID: userID },
+      { ...req.body }
+    );
+    if (!workout) {
+      throw new Error("Workout not found");
+    }
+    res.json(workout);
+  } catch {}
+}
 
 async function deleteWorkout(req, res) {
   const id = req.params.id;
