@@ -73,7 +73,9 @@ async function update(req, res) {
       throw new Error("Workout not found");
     }
     res.json(workout);
-  } catch {}
+  } catch (error) {
+    res.status(500).json(error);
+  }
 }
 
 async function deleteWorkout(req, res) {
