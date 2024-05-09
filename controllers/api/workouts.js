@@ -30,10 +30,16 @@ async function index(req, res) {
 async function show(req, res) {
   try {
     const { id } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        throw new Error ('ID is not valid')
+    }
     const workout = await Workout.findById(id);
+    if (!workout) {
+        throw new Error ('Workout not found');
+    }
     res.json(workout);
-  } catch {
-    res.status(500).json({ message: "Workout not found" });
+  } catch (e) {
+    res.status(500).json(e);
   }
 }
 
