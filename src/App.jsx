@@ -1,7 +1,7 @@
-import './App.css'
+import "./App.css";
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { getUser } from "./utilities/users-service";
+import { getUser } from "./services/users-service";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import SavedWorkoutsPage from "./pages/SavedWorkoutsPage/SavedWorkoutsPage";
