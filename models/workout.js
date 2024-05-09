@@ -22,7 +22,7 @@ const exerciseSchema =  new Schema({
 const workoutSchema =  new Schema({
     name: { type: String, default: '' },
     exercises: [exerciseSchema],
-    user: {
+    userID: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
