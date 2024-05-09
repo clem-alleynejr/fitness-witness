@@ -2,6 +2,20 @@ import sendRequest from './send-request';
 
 const BASE_URL = '/api/workouts';
 
+ export function getAll() {
+   return sendRequest(BASE_URL);
+ }
+
+
+
+
+
+
+
+
+
+
+
 // Retrieve an unsaved workout for the logged in user
 export function getUnsavedWorkout() {
   return sendRequest(`${BASE_URL}/unsavedWorkout`);
@@ -34,10 +48,10 @@ export function saveUnsavedWorkout() {
   return sendRequest(`${BASE_URL}/unsavedWorkout/saveUnsavedWorkout`, 'POST');
 }
 
-// Retrieve all saved workouts for the logged in user
-export function getAll() {
-  return sendRequest(BASE_URL)
-}
+// // Retrieve all saved workouts for the logged in user
+// export function getAll() {
+//   return sendRequest(BASE_URL)
+// }
 
 // Delete a workout from a user's saved workout list
 export function deleteSavedWorkout(workoutId) {
