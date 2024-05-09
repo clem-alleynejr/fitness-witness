@@ -18,8 +18,8 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const userID = req.user._id
-    try {
+  const userID = req.user._id;
+  try {
     const workouts = Workout.find({ userID: userID });
     res.json(workouts);
   } catch (error) {
@@ -28,13 +28,13 @@ async function index(req, res) {
 }
 
 async function show(req, res) {
-    const id = req.params.id;
-    const userID = req.user._id;
+  const id = req.params.id;
+  const userID = req.user._id;
   try {
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new Error("Workout ID is not valid");
     }
-    const workout = await Workout.find({ _id: id, userID: userID});
+    const workout = await Workout.find({ _id: id, userID: userID });
     if (!workout) {
       throw new Error("Workout not found");
     }
@@ -45,10 +45,9 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+  const userID = req.user._id;
+  const { name, exercises } = req.body;
   try {
-    const userID = req.user._id
-    const { name, exercises } = req.body;
-
     // Create new workout
     const newWorkout = await Workout.create({ name, exercises, userID });
 
@@ -61,15 +60,17 @@ async function create(req, res) {
 function update(req, res) {}
 
 async function deleteWorkout(req, res) {
+  const id = req.params.id;
+  const userID = req.user._id;
   try {
-    const { id } = req.params;
     if (!mongoose.Types.ObjectId.isValid(id)) {
       throw new Error("Workout ID is not valid");
     }
-    const workout = await Workout.findOneAndDelete({ _id: id });
+    const workout = await Workout.findOneAndDelete({ _id: id, userID: userID });
     if (!workout) {
       throw new Error("Workout not found");
     }
+    res.json(workout);
   } catch (error) {
     res.status(400).json(error);
   }
