@@ -1,6 +1,6 @@
-import './NavBar.css';
+import "./NavBar.css";
 import { Link } from "react-router-dom";
-import * as userService from "../../utilities/users-service";
+import * as userService from "../../services/users-service";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";

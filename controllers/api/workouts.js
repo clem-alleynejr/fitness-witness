@@ -18,9 +18,9 @@ module.exports = {
 };
 
 async function index(req, res) {
-  const userID = req.user._id;
   try {
-    const workouts = Workout.find({ userID: userID });
+    const workouts = await Workout.find({name: 'waffle'});
+    console.log(workouts);
     res.json(workouts);
   } catch (error) {
     res.status(500).json({ message: "Failed to retreive workouts" });

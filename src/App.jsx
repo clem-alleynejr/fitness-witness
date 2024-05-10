@@ -1,7 +1,7 @@
-import './App.css'
+import "./App.css";
 import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { getUser } from "./utilities/users-service";
+import { getUser } from "./services/users-service";
 import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import SavedWorkoutsPage from "./pages/SavedWorkoutsPage/SavedWorkoutsPage";
@@ -23,10 +23,10 @@ export default function App() {
 
       <div className="page">
         <Routes>
-          {/* Home Route*/}
+          {/* Home Page*/}
           <Route path="/" element={<HomePage user={user} />} />
 
-          {/* Workout Related Routes */}
+          {/* Workout Related Pages */}
           {user ? (
             <>
               <Route path="/workouts" element={<WorkoutsIndexPage />} />
@@ -35,7 +35,7 @@ export default function App() {
               <Route path="/workouts/:id/edit" element={<EditWorkoutPage />} />
             </>
           ) : (
-            // Auth Route (No User)
+            // Auth Page (No User)
             <Route path="/auth" element={<AuthPage setUser={setUser} />} />
           )}
 
