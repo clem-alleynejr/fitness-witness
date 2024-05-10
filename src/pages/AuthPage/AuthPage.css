@@ -4,6 +4,12 @@ h1.AuthPage {
 
 .auth-page {
   text-align: center;
+  width: 80%;
+  background-color: black;
+  margin: 0 auto;
+  border: 1px solid white;
+  margin-top: 20px;
+  border-radius: 10px;
 }
 
 .auth-page > div {
@@ -26,7 +32,5 @@ h1.AuthPage {
 .auth-page .switch-form {
     display: inline-block;
     background-color: black;
-    padding: 16px;
-    border: 1px solid white;
-    margin: 0;
+    margin: 10px auto 15px;
 }

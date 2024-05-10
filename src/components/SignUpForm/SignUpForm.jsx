@@ -64,7 +64,7 @@ export default class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
-            <label>Confirm</label>
+            <label>Confirm Password</label>
             <input
               type="password"
               name="confirm"
@@ -77,7 +77,7 @@ export default class SignUpForm extends Component {
             </button>
           </form>
         </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
+        <p className={`error-message ${this.state.error ? '' : 'hidden'}`}>&nbsp;{this.state.error}</p>
       </div>
     );
   }
