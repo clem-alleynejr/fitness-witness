@@ -1,6 +1,6 @@
 import './WorkoutsIndexPage.css'
 import { useEffect, useState } from "react";
-import { Routes } from "react-router-dom";
+import { Link, Routes } from "react-router-dom";
 import * as workoutsAPI from "../../services/workouts-api";
 
 export default function WorkoutsIndexPage() {
@@ -20,7 +20,8 @@ export default function WorkoutsIndexPage() {
       <h1>My Workouts</h1>
       <div className="workouts">
         {workouts && workouts.map((workout) => (
-          <h3 key={workout._id}>{workout.name}</h3>
+          <Link to={`/workouts/${workout._id}`}></Link>
+          <h4 key={workout._id}>{workout.name}</h4>
         ))}
       </div>
     </div>
