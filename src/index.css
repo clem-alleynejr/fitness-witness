@@ -1,20 +1,19 @@
-/* Mobile-first design */
-
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
+.App a {
+  text-decoration: none;
 }
 
-/* Page Content */
-
-.page {
-  flex-grow: 1;
-  flex-shrink: 1;
-  padding-bottom: 50px;
+.page-title {
+  color: white;
+  margin: 10px auto 20px;
+  background-color: black;
+  display: inline-block;
+  padding: 16px;
+  border-radius: 15px;
+  font-family: 'Roboto', sans-serif;
 }
+
+
+
 
 
 

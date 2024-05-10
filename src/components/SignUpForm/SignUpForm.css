@@ -1,9 +1,6 @@
 .formcontainer {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 90%;
     background-color: rgb(33, 30, 30);
-    border: 1px solid #ddd;
     border-radius: 4px;
   }
   

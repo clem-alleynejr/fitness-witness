@@ -23,9 +23,9 @@ Save and Organize Workouts: Save your custom workouts for easy access and organi
 
 | Screenshot | Description |
 |------------ | ------------|
-| <h3 align="center">Home Page</h3> | <img src="src/images/HomePage.png" width="800">  
-| <h3 align="center">My Workouts Page</h3> | <img src="src/images/MyWorkoutsPage.png" width="800"> 
-| <h3 align="center">New Workout Creator Page</h3> | <img src="src/images/NewWorkoutCreator.png" width="800"> 
+| <h3 align="center">Home Page</h3> | <img src="src/assets/images/HomePage.png" width="800">  
+| <h3 align="center">My Workouts Page</h3> | <img src="src/assets/images/MyWorkoutsPage.png" width="800"> 
+| <h3 align="center">New Workout Creator Page</h3> | <img src="src/assets/images/NewWorkoutCreator.png" width="800"> 
 
 
 # 👞 Next Steps

@@ -21,6 +21,7 @@ const exerciseSchema =  new Schema({
 
 const workoutSchema =  new Schema({
     name: { type: String, default: '' },
+    description: { type: String, default: ''},
     exercises: [exerciseSchema],
     userID: {
         type: Schema.Types.ObjectId,

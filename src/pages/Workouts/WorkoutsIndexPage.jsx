@@ -1,24 +1,12 @@
+import "./WorkoutsIndexPage.css";
 import { useEffect, useState } from "react";
-import { Routes } from "react-router-dom";
+import { Link, Routes } from "react-router-dom";
 import * as workoutsAPI from "../../services/workouts-api";
 
 export default function WorkoutsIndexPage() {
   const [workouts, setWorkouts] = useState(null);
 
-  // useEffect(() => {
-  //   const fetchWorkouts = async () => {
-  //     const response = await fetch("/api/workouts");
-  //     const workouts = await response.json();
-
-  //     if (response.ok) {
-  //       setWorkouts(workouts);
-  //     }
-  //   };
-
-  //   fetchWorkouts();
-  // }, []);
-
-  useEffect(function() {
+  useEffect(function () {
     async function getWorkouts() {
       const workouts = await workoutsAPI.getAll();
       setWorkouts(workouts);
@@ -29,11 +17,17 @@ export default function WorkoutsIndexPage() {
 
   return (
     <div className="workouts-index-page">
-      <h1>My Workouts</h1>
+      <h1 className="page-title">My Workouts</h1>
       <div className="workouts">
-        {workouts && workouts.map((workout) => (
-          <h3 key={workout._id}></h3>
-        ))}
+        {workouts &&
+          workouts.map((workout) => (
+
+              <Link to={`/workouts/${workout._id}`} key={workout._id} className="workout">
+                {workout.name}
+                <p>{workout.description}</p>
+              </Link>
+
+          ))}
       </div>
     </div>
   );
