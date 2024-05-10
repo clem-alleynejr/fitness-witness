@@ -12,7 +12,7 @@ Fitness Witness is a MERN stack application you can use to create personalized w
 
 Key Features:
 
-Create Custom Workouts: Take control of your fitness journey by designing workouts that perfectly align with your goals, preferences, and fitness level. Customize exercises, sets, reps,, and more.
+Create Custom Workouts: Take control of your fitness journey by designing workouts that perfectly align with your goals, preferences, and fitness level. Customize exercises, sets, reps, and more.
 
 Exercise Library: Choose from a wide range of exercises to target specific muscle groups or achieve specific fitness objectives.
 
