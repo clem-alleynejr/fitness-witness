@@ -13,13 +13,14 @@ export default function NavBar({ user, setUser }) {
     userService.logOut();
     // Update state will also cause a re-render
     setUser(null);
+    setNavCollapsed(true);
   }
 
   return (
     <nav className="main-nav">
       <div className="navbar">
         <div className="brand-and-toggle">
-          <Link to="/" className="navbar-brand">
+          <Link to="/" onClick={() => setNavCollapsed(true)}className="navbar-brand">
             <img
               src="https://images-platform.99static.com/Lw8CyZQrGrnlyPa-QHw8p4Tn7Nw=/200x200:1800x1800/500x500/top/smart/99designs-contests-attachments/121/121893/attachment_121893514"
               alt="Logo"
@@ -45,10 +46,10 @@ export default function NavBar({ user, setUser }) {
         <div className={`collapsible-nav ${navCollapsed ? "hidden" : ""} `}>
           <ul className="nav-links">
             <li className="nav-item">
-              <Link to={user ? "/workouts" : "/auth"}>My Workouts</Link>
+              <Link to={user ? "/workouts" : "/auth"} onClick={() => setNavCollapsed(true)}>My Workouts</Link>
             </li>
             <li className="nav-item">
-              <Link to={user ? "/workouts/new" : "/auth"}>Create Workout</Link>
+              <Link to={user ? "/workouts/new" : "/auth"} onClick={() => setNavCollapsed(true)}>Create Workout</Link>
             </li>
           </ul>
 
@@ -64,7 +65,7 @@ export default function NavBar({ user, setUser }) {
               </div>
             ) : (
               <li className="nav-item">
-                <Link to="/auth">Log In / Sign Up</Link>
+                <Link to="/auth" onClick={() => setNavCollapsed(true)}>Log In / Sign Up</Link>
               </li>
             )}
           </ul>
