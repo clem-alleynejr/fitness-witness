@@ -44,10 +44,6 @@
     list-style-type: none;
   }
   
-  .main-nav a {
-    text-decoration: none;
-  }
-  
   .main-nav .nav-links a {
     color: orange;
   }

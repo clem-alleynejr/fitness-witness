@@ -20,8 +20,10 @@ export default function WorkoutsIndexPage() {
       <h1>My Workouts</h1>
       <div className="workouts">
         {workouts && workouts.map((workout) => (
-          <Link to={`/workouts/${workout._id}`}></Link>
-          <h4 key={workout._id}>{workout.name}</h4>
+          <div key={workout._id} className='workout'>
+            <Link to={`/workouts/${workout._id}`}>{workout.name}</Link>
+            <p>{workout.description}</p>
+          </div>
         ))}
       </div>
     </div>

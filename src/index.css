@@ -8,6 +8,11 @@
   width: 100vw;
 }
 
+.App a {
+  text-decoration: none;
+}
+
+
 /* Page Content */
 
 .page {
