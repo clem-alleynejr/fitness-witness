@@ -8,6 +8,7 @@
   
   .home-page h1 {
     font-family: 'Roboto', sans-serif;
+    margin: 10px;
   }
   
   .home-page a.button {
@@ -32,7 +33,7 @@
     gap: 15px;
     background: black;
     padding: 16px;
-    margin: 16px;
+    margin: 20px 16px auto;
     border-radius: 20px;
   }
   
