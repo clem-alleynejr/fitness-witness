@@ -1,8 +1,8 @@
 .formcontainer {
-    max-width: 400px;
+    width: 90%;
     margin: 0 auto;
     padding: 20px;
-    background-color: rgb(33, 30, 30);
+    background-color: black;
     border: 1px solid #ddd;
     border-radius: 4px;
   }
@@ -25,7 +25,7 @@
     display: block;
     width: 100%;
     padding: 10px;
-    background-color: #3e0daa;
+    background-color: orange;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -40,5 +40,9 @@
   .error-message {
     color: red;
     margin-top: 10px;
+  }
+
+.error-message.hidden {
+    display: none;
   }
   
