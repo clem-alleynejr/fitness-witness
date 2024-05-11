@@ -1,0 +1,12 @@
+.create-workout-page {
+    text-align: center;
+    color: white;
+}
+
+.create-workout-page form label {
+    display: block;
+}
+
+.create-workout-page .form input {
+    display: block;
+}

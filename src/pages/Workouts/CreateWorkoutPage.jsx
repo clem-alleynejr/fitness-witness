@@ -1,3 +1,4 @@
+import './CreateWorkoutPage.css'
 import { useEffect, useState } from "react";
 import ExerciseList from "../../components/ExerciseList/ExerciseList";
 
@@ -23,6 +24,7 @@ export default function CreateWorkoutPage() {
                     <label>Workout Name:</label>
                     <input
                         type="text"
+                        placeholder='Ex. Chest Day, Leg Day, etc.'
                         value={workoutName}
                         onChange={(e) => setWorkoutName(e.target.value)}
                         required
