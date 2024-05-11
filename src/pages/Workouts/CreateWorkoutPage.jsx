@@ -5,6 +5,7 @@ export default function CreateWorkoutPage() {
     const [exerciseOptions, setExerciseOptions] = useState(null);
     const [exerciseSelections, setExerciseSelections] = useState(null);
     const [workoutName, setWorkoutName] = useState(null);
+    const [exerciseSearch, setExerciseSearch] = useState(null);
 
     // Gets exercise choices from third party API
     useEffect(function () {
@@ -35,7 +36,7 @@ export default function CreateWorkoutPage() {
                     <div className="filters-and-exercises">
                         <div className="filters"></div>
                         <div className="exercise-options">
-                            <input type="text" placeholder="Search Exercise" />
+                            <input type="text" placeholder="Search Exercise" onChange={(e) => setExerciseSearch(e.target.value)} />
                             {/* <ExerciseList exercises={exerciseOptions} /> */}
                         </div>
                     </div>
