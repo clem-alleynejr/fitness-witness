@@ -6,6 +6,7 @@ import WorkoutList from "../../components/WorkoutList/WorkoutList";
 export default function WorkoutsIndexPage() {
   const [workouts, setWorkouts] = useState(null);
 
+  // Gets all user workouts
   useEffect(function () {
     async function getWorkouts() {
       const workouts = await workoutsAPI.getAll();

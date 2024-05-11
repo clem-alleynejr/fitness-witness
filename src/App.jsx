@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import AuthPage from "./pages/AuthPage/AuthPage";
 import SavedWorkoutsPage from "./pages/SavedWorkoutsPage/SavedWorkoutsPage";
 import WorkoutsIndexPage from "./pages/Workouts/WorkoutsIndexPage";
-import NewWorkoutPage from "./pages/Workouts/NewWorkoutPage";
+import NewWorkoutPage from "./pages/Workouts/CreateWorkoutPage";
 import ShowWorkoutPage from "./pages/Workouts/ShowWorkoutPage";
 import EditWorkoutPage from "./pages/Workouts/EditWorkoutPage";
 
