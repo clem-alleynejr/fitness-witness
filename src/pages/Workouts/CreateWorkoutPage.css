@@ -10,3 +10,9 @@
 .create-workout-page .form input {
     display: block;
 }
+
+.create-workout-page .workout-creator {
+    border: 1px solid white;
+    height: calc(99vh - 175px);
+    margin: 0 16px;
+}
