@@ -34,9 +34,11 @@ export default function CreateWorkoutPage() {
                     </div>
                 </form>
                 <div className="exercise-select">
-                    <h2>Select Exercises</h2>
+                    <h2>Exercise Select</h2>
                     <div className="filters-and-exercises">
-                        <div className="filters"></div>
+                        <div className="filters">
+                          <h3>Filters</h3>
+                        </div>
                         <div className="exercise-options">
                             <input type="text" placeholder="Search Exercise" onChange={(e) => setExerciseSearch(e.target.value)} />
                             {/* <ExerciseList exercises={exerciseOptions} /> */}

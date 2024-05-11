@@ -7,6 +7,10 @@
     display: block;
 }
 
+.create-workout-page .new-workout-form label {
+    margin-top: 10px;
+}
+
 .create-workout-page .form input {
     display: block;
 }
@@ -15,4 +19,34 @@
     border: 1px solid white;
     height: calc(99vh - 175px);
     margin: 0 16px;
+    display: flex;
+    flex-direction: column;
 }
+
+.create-workout-page .new-workout-form {
+    border: 1px solid white;
+    height: 50%;
+}
+
+.create-workout-page .exercise-select {
+    height: 50%;
+}
+
+.create-workout-page .filters-and-exercises {
+    display: flex;
+    height: 100%;
+}
+
+.create-workout-page .filters-and-exercises .filters {
+    width: 50%;
+    border: 1px solid white;
+}
+
+.create-workout-page .filters-and-exercises .exercise-options {
+    border: 1px solid white;
+}
+
+.create-workout-page .exercise-select > h2 {
+    margin-top: 10px;
+}
+
