@@ -11,6 +11,7 @@ import ShowWorkoutPage from "./pages/Workouts/ShowWorkoutPage";
 import EditWorkoutPage from "./pages/Workouts/EditWorkoutPage";
 
 import NavBar from "./components/NavBar/NavBar";
+import CreateWorkoutPage from "./pages/Workouts/CreateWorkoutPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -30,7 +31,7 @@ export default function App() {
           {user ? (
             <>
               <Route path="/workouts" element={<WorkoutsIndexPage />} />
-              <Route path="/workouts/new" element={<NewWorkoutPage />} />
+              <Route path="/workouts/new" element={<CreateWorkoutPage />} />
               <Route path="/workouts/:id" element={<ShowWorkoutPage />} />
               <Route path="/workouts/:id/edit" element={<EditWorkoutPage />} />
             </>

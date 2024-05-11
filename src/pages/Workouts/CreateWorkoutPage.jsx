@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExerciseList from "../../components/ExerciseList/ExerciseList";
 
 export default function CreateWorkoutPage() {
     const [exerciseOptions, setExerciseOptions] = useState(null);
     const [exerciseSelections, setExerciseSelections] = useState(null);
+    const [workoutName, setWorkoutName] = useState(null);
 
     // Gets exercise choices from third party API
     useEffect(function () {
         async function getExerciseOptions() {
             setExerciseOptions(exerciseOptions);
         }
-        getWorkouts();
+        getExerciseOptions();
     }, []);
 
     return (
@@ -19,9 +20,14 @@ export default function CreateWorkoutPage() {
             <div className="workout-creator">
                 <form className="new-workout-form">
                     <label>Workout Name:</label>
-                    <input type="text" required />
+                    <input
+                        type="text"
+                        value={workoutName}
+                        onChange={(e) => setWorkoutName(e.target.value)}
+                        required
+                    />
                     <div className="exercise-selections">
-                        <ExerciseList exercises= {exerciseSelections} />
+                        {/* <ExerciseList exercises={exerciseSelections} /> */}
                     </div>
                 </form>
                 <div className="exercise-select">
@@ -29,7 +35,8 @@ export default function CreateWorkoutPage() {
                     <div className="filters-and-exercises">
                         <div className="filters"></div>
                         <div className="exercise-options">
-                            <ExerciseList exercises={exerciseOptions} />
+                            <input type="text" placeholder="Search Exercise" />
+                            {/* <ExerciseList exercises={exerciseOptions} /> */}
                         </div>
                     </div>
                 </div>
