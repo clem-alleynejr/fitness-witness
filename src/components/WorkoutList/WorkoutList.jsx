@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function WorkoutList({ workouts }) {
   return (
-    <div className="workouts">
+    <div className="workout-list">
       {workouts &&
         workouts.map((workout) => (
           <Link
