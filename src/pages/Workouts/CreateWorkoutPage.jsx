@@ -29,12 +29,11 @@ export default function CreateWorkoutPage() {
                         onChange={(e) => setWorkoutName(e.target.value)}
                         required
                     />
-                    <div className="exercise-selections">
                         {/* <ExerciseList exercises={exerciseSelections} /> */}
-                    </div>
+
                 </form>
                 <div className="exercise-select">
-                    <h2>Exercise Select</h2>
+                    <h4>Exercise Select</h4>
                     <div className="filters-and-exercises">
                         <div className="filters">
                           <h3>Filters</h3>
