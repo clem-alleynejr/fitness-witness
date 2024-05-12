@@ -1,30 +1,19 @@
-import './WorkoutList.css';
-import WorkoutCard from '../WorkoutCard/WorkoutCard';
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-export default function WorkoutList({ workouts, activeWorkout, setActiveWorkout }) {
-    const workoutCards = workouts.map(w =>
-        <WorkoutCard
-            key={w._id}
-            workout={w}
-            activeWorkout={activeWorkout}
-            setActiveWorkout={setActiveWorkout}
-        />
-    );
-
-    return (
-        <>
-        <Link to="/workouts/new" className="button btn-sm">Add New Workout</Link>
-        <div className="list-group">
-            {workoutCards.length ?
-            <>
-            <h6 className='WorkoutList'>Select Saved Workout to View Details:</h6>
-            {workoutCards}
-            </>
-            :
-            <p></p>
-}
-        </div>
-        </>
-    );
+export default function WorkoutList({ workouts }) {
+  return (
+    <div className="workout-list">
+      {workouts &&
+        workouts.map((workout) => (
+          <Link
+            to={`/workouts/${workout._id}`}
+            key={workout._id}
+            className="workout"
+          >
+            {workout.name}
+            <p>{workout.description}</p>
+          </Link>
+        ))}
+    </div>
+  );
 }

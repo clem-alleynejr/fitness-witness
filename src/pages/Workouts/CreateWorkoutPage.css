@@ -1,0 +1,69 @@
+.create-workout-page {
+    text-align: center;
+    color: white;
+}
+
+.create-workout-page form label {
+    display: block;
+}
+
+.create-workout-page .new-workout-form label {
+    margin-top: 10px;
+}
+
+.create-workout-page .form input {
+    display: block;
+}
+
+.create-workout-page .workout-creator {
+    border: 1px solid white;
+    height: calc(100vh - 182px);
+    margin: 0 16px;
+    display: grid;
+    grid-template: [row1-start] "new-workout-form" 0.9fr [row1-end]
+    [row2-start] "exercise-select" 1.1fr  [row2-end]
+    / auto;
+}
+
+.create-workout-page .new-workout-form {
+    border: 1px solid white;
+    grid-area: new-workout-form;
+    margin: 16px;
+}
+
+.create-workout-page .exercise-select {
+    border: 1px solid white;
+    grid-area: exercise-select;
+}
+
+.create-workout-page .filters-and-exercises {
+    /* display: grid;
+    grid-template: [row1-start] "filters exercise-options" 1fr [row1-end]
+    / 1fr 1fr; */
+    height: calc(100% - 62px);
+    margin: 0 16px;
+    border: 1px solid white;
+}
+
+.create-workout-page .exercise-select > h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.create-workout-page .exercise-options input {
+    margin-top: 10px;
+}
+
+.create-workout-page .exercise-options button {
+    margin: 10px auto;
+    display: block;
+}
+
+.create-workout-page .filters {
+    display: none;
+}
+
+.create-workout-page .filters h3 {
+    margin-top: 10px;
+}
+

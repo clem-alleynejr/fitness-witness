@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./SavedWorkoutsPage.css";
-import WorkoutList from "../../components/WorkoutList/WorkoutList";
+import WorkoutList from "../../components/WorkoutList/WorkoutListt";
 import WorkoutDetail from "../../components/WorkoutDetail/WorkoutDetail";
 import * as workoutsAPI from "../../services/workouts-api";
 

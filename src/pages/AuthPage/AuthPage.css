@@ -7,9 +7,10 @@ h1.AuthPage {
   width: 80%;
   background-color: black;
   margin: 0 auto;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   margin-top: 20px;
   border-radius: 10px;
+  padding-top: 1px;
 }
 
 .auth-page > div {

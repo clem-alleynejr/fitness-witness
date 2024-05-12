@@ -1,11 +1,22 @@
-.button btn-sm {
-margin-bottom: 10px;
-}
-
-.list-group {
-margin-top: 10px;
-}
-
-h6.WorkoutList {
+.workout-list p {
     color: white;
+}
+
+.workout-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.workout-list .workout {
+    background-color: black;
+    padding: 16px 16px 0;
+    width: 100%;
+}
+
+.workout-list a.workout {
+    color: orange;
 }
