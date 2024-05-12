@@ -41,6 +41,7 @@ export default function CreateWorkoutPage() {
                         </div>
                         <div className="exercise-options">
                             <input type="text" placeholder="Search Exercise" onChange={(e) => setExerciseSearch(e.target.value)} />
+                            <button>All Filters</button>
                             {/* <ExerciseList exercises={exerciseOptions} /> */}
                         </div>
                     </div>
