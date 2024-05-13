@@ -1,6 +1,8 @@
 import './CreateWorkoutPage.css'
 import { useEffect, useState } from "react";
 import ExerciseList from "../../components/ExerciseList/ExerciseList";
+import * as exercisesAPI from "../../services/exercises-api";
+
 
 export default function CreateWorkoutPage() {
     const [exerciseOptions, setExerciseOptions] = useState(null);
@@ -8,12 +10,13 @@ export default function CreateWorkoutPage() {
     const [workoutName, setWorkoutName] = useState(null);
     const [exerciseSearch, setExerciseSearch] = useState(null);
     const [bodyPartFilter, setBodyPartFilter] = useState(null);
-    const [equipmentFilter, setEquipmentFilter] = useState(null;)
+    const [equipmentFilter, setEquipmentFilter] = useState(null);
 
     // Gets exercise choices from third party API
     useEffect(function () {
         async function getExerciseOptions() {
-            setExerciseOptions(exerciseOptions);
+            const exercises = await exercisesAPI.getAll();
+            setExerciseOptions(exercises);
         }
         getExerciseOptions();
     }, []);
@@ -43,7 +46,7 @@ export default function CreateWorkoutPage() {
                         <div className="exercise-options">
                             <input type="text" placeholder="Search Exercise" onChange={(e) => setExerciseSearch(e.target.value)} />
                             <button>All Filters</button>
-                            {/* <ExerciseList exercises={exerciseOptions} /> */}
+                            <ExerciseList exercises={exerciseOptions} />
                         </div>
                     </div>
                 </div>

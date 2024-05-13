@@ -1,6 +1,6 @@
 import sendRequest from './send-request';
 
-const BASE_URL = '/api/workouts';
+const BASE_URL = 'https://exercisedb.p.rapidapi.com';
 
  export function getAll() {
    return sendRequest(BASE_URL);
