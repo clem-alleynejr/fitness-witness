@@ -32,7 +32,7 @@
 }
 
 .create-workout-page .exercise-select {
-    border: 1px solid white;
+    /* border: 1px solid white; */
     grid-area: exercise-select;
 }
 

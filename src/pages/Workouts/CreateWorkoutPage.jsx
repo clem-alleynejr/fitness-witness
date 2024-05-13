@@ -7,6 +7,8 @@ export default function CreateWorkoutPage() {
     const [exerciseSelections, setExerciseSelections] = useState(null);
     const [workoutName, setWorkoutName] = useState(null);
     const [exerciseSearch, setExerciseSearch] = useState(null);
+    const [bodyPartFilter, setBodyPartFilter] = useState(null);
+    const [equipmentFilter, setEquipmentFilter] = useState(null;)
 
     // Gets exercise choices from third party API
     useEffect(function () {
