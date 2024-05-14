@@ -17,6 +17,7 @@ export default function CreateWorkoutPage() {
         async function getExerciseOptions() {
           try {
             const exercises = await exercisesAPI.getAll();
+            console.log(exercises);
             setExerciseOptions(exercises);
           } catch (error) {
             console.log(error);
@@ -38,7 +39,7 @@ export default function CreateWorkoutPage() {
                         onChange={(e) => setWorkoutName(e.target.value)}
                         required
                     />
-                        {/* <ExerciseList exercises={exerciseSelections} /> */}
+                        {exerciseSelections && <ExerciseList exercises={exerciseSelections} />}
 
                 </form>
                 <div className="exercise-select">
@@ -50,7 +51,7 @@ export default function CreateWorkoutPage() {
                         <div className="exercise-options">
                             <input type="text" placeholder="Search Exercise" onChange={(e) => setExerciseSearch(e.target.value)} />
                             <button>All Filters</button>
-                            {/* <ExerciseList exercises={exerciseOptions} /> */}
+                            {exerciseOptions && <ExerciseList exercises={exerciseOptions} /> }
                         </div>
                     </div>
                 </div>

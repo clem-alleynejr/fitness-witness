@@ -67,3 +67,8 @@
     margin-top: 10px;
 }
 
+.create-workout-page .exercise-list {
+    display: flex;
+    overflow: hidden;
+}
+
