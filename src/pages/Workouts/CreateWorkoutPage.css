@@ -21,8 +21,8 @@
     width: calc(100vw - 32px);
     margin: 0 auto;
     display: grid;
-    grid-template: [row1-start] "new-workout-form" 0.9fr [row1-end]
-    [row2-start] "exercise-select" 1.1fr  [row2-end]
+    grid-template: [row1-start] "new-workout-form" 0.85fr [row1-end]
+    [row2-start] "exercise-select" 1.15fr  [row2-end]
     / auto;
     justify-items: center;
     align-items: center;
@@ -31,23 +31,31 @@
 .create-workout-page .new-workout-form {
     grid-area: new-workout-form;
     border: 1px solid white;
-    width: calc(100% - 32px);
-    height: calc(100% - 32px);
+    /* width: calc(100% - 32px); */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .create-workout-page .exercise-select {
     grid-area: exercise-select;
     border: 1px solid white;
-    width: calc(100% - 32px);
-    height: calc(100% - 32px);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .create-workout-page .filters,
 .create-workout-page .exercise-options {
-    height: calc(100% - 62px);
-    width: calc(100% - 32px);
+    /* height: calc(100% - 50px); */
+    width: 100%;
     margin: 0 auto;
     border: 1px solid white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -55,14 +63,17 @@
     display: flex;
     overflow-x: scroll;
     width: 100%;
-    height: calc(100% - 120px);
+    flex-grow: 1;
     border: 1px solid white;
-    margin: 25px auto auto;
+    margin: 10px auto auto;
+    align-items: center;
+    gap: 20px;
 }
 
+
 .create-workout-page .exercise-select > h4 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 30px;
+    margin-bottom: 0;
 }
 
 .create-workout-page .exercise-options input {
@@ -70,7 +81,7 @@
 }
 
 .create-workout-page .exercise-options button {
-    margin: 10px auto;
+    margin: 10px auto 0;
     display: block;
 }
 
@@ -81,6 +92,7 @@
 .create-workout-page .filters h3 {
     margin-top: 10px;
 }
+
 
 
 

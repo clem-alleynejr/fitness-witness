@@ -40,7 +40,6 @@ export default function CreateWorkoutPage() {
                         required
                     />
                         {exerciseSelections && <ExerciseList exercises={exerciseSelections} />}
-
                 </form>
                 <div className="exercise-select">
                     <h4>Exercise Select</h4>
