@@ -6,6 +6,8 @@ import * as exercisesAPI from "../../services/exercises-api";
 
 export default function CreateWorkoutPage() {
     const [exerciseOptions, setExerciseOptions] = useState(null);
+    const [optionsLoading, setOptionsLoading] = useState(true);
+    const [optionsError, setOptionsError] = useState(false);
     const [exerciseSelections, setExerciseSelections] = useState(null);
     const [workoutName, setWorkoutName] = useState(null);
     const [exerciseSearch, setExerciseSearch] = useState(null);
@@ -19,8 +21,12 @@ export default function CreateWorkoutPage() {
             const exercises = await exercisesAPI.getAll();
             console.log(exercises);
             setExerciseOptions(exercises);
+            setOptionsLoading(false);
+            setOptionsError(false);
           } catch (error) {
             console.log(error);
+            setOptionsLoading(false);
+            setOptionsError(true);
           }
         }
         getExerciseOptions();
@@ -42,13 +48,15 @@ export default function CreateWorkoutPage() {
                         {exerciseSelections && <ExerciseList exercises={exerciseSelections} />}
                 </form>
                 <div className="exercise-select">
-                    <h3>Exercise Select</h3>
+                    <h3>Exercise Selector</h3>
                         <div className="filters">
                           <h3>Filters</h3>
                         </div>
                         <div className="exercise-options">
                             <input type="text" placeholder="Search Exercise" onChange={(e) => setExerciseSearch(e.target.value)} />
                             <button>All Filters</button>
+                            <div className={`options-loading ${optionsLoading ? '' : 'hidden'}`}>Loading...</div>
+                            <div className={`options-error ${optionsError ? '' : 'hidden'}`}>Error Fetching Exercises</div>
                             {exerciseOptions && <ExerciseList exercises={exerciseOptions} /> }
                         </div>
                 </div>

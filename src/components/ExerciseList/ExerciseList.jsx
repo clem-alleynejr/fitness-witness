@@ -8,6 +8,7 @@ export default function ExerciseList({exercises, setQty, repQty }) {
             <p>Equipment: {exercise.equipment}</p>
             {setQty && <p>Sets: {exercise.setQty}</p>}
             {repQty && <p>Reps: {exercise.repQty}</p>}
+            {/* For Exercise Selector */}
             <button>See More Details</button>
             <button>Add to Workout</button>
           </div>

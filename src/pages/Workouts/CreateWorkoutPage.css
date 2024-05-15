@@ -58,6 +58,14 @@
     flex-direction: column; */
 }
 
+.create-workout-page .options-loading.hidden {
+    display: none;
+}
+
+.create-workout-page .options-error.hidden {
+    display: none;
+}
+
 
 .create-workout-page .exercise-list {
     display: flex;
