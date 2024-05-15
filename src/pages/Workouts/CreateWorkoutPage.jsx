@@ -42,7 +42,7 @@ export default function CreateWorkoutPage() {
                         {exerciseSelections && <ExerciseList exercises={exerciseSelections} />}
                 </form>
                 <div className="exercise-select">
-                    <h4>Exercise Select</h4>
+                    <h3>Exercise Select</h3>
                         <div className="filters">
                           <h3>Filters</h3>
                         </div>

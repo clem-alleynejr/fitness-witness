@@ -17,61 +17,73 @@
 
 .create-workout-page .workout-creator {
     border: 1px solid white;
-    height: calc(100vh - 182px);
+    /* height: calc(100vh - 182px); */
     width: calc(100vw - 32px);
     margin: 0 auto;
-    display: grid;
+    /* display: grid;
     grid-template: [row1-start] "new-workout-form" 0.85fr [row1-end]
     [row2-start] "exercise-select" 1.15fr  [row2-end]
     / auto;
-    justify-items: center;
+    justify-items: center; */
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
 .create-workout-page .new-workout-form {
-    grid-area: new-workout-form;
+    /* grid-area: new-workout-form; */
     border: 1px solid white;
-    /* width: calc(100% - 32px); */
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     display: flex;
     flex-direction: column;
 }
 
 .create-workout-page .exercise-select {
-    grid-area: exercise-select;
+    /* grid-area: exercise-select; */
     border: 1px solid white;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    /* width: 100%;
+    height: 100%; */
+    /* display: flex;
+    flex-direction: column; */
 }
 
 .create-workout-page .filters,
 .create-workout-page .exercise-options {
-    /* height: calc(100% - 50px); */
     width: 100%;
     margin: 0 auto;
     border: 1px solid white;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+    /* flex-grow: 1; */
+    /* display: flex;
+    flex-direction: column; */
 }
 
 
 .create-workout-page .exercise-list {
     display: flex;
-    overflow-x: scroll;
-    width: 100%;
-    flex-grow: 1;
+    overflow: scroll;
+    width: calc(100vw - 32px);
+    /* flex-grow: 1; */
     border: 1px solid white;
     margin: 10px auto auto;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
+    padding: 10px;
+}
+
+.create-workout-page .exercise {
+    min-width: 215px;
+    min-height: 260px;
+    border: 1px solid white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
-.create-workout-page .exercise-select > h4 {
+
+.create-workout-page .exercise-select > h3 {
     margin-top: 30px;
     margin-bottom: 0;
 }
