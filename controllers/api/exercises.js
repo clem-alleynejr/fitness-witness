@@ -19,15 +19,20 @@ async function index(req, res) {
 
     const results = {};
 
-    results.next = {
-        page: page + 1,
-        limit: limit,
-    };
+    if (endIndex < exercises.length) {
+        results.next = {
+            page: page + 1,
+            limit: limit,
+        };
+    }
 
-    results.previous = {
-        page: page - 1,
-        limit: limit,
-    };
+    if (startIndex > 0) {
+        results.previous = {
+            page: page - 1,
+            limit: limit,
+        };
+    }
+   
 
     results.results = exercises.slice(startIndex, endIndex);
     res.json(results.results);
