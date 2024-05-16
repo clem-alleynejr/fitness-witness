@@ -3,7 +3,7 @@ module.exports = {
     // show,
     // create,
     // update,
-    // delete: deleteWorkout,
+    // delete: deleteExercise,
 };
 
 async function index(req, res) {
