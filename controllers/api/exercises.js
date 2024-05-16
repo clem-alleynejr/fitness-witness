@@ -1,5 +1,3 @@
-const { Exercise } = require("../../models/exercise");
-
 module.exports = {
     index,
     // show,
@@ -9,31 +7,5 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const page = parseInt(req.query.page);
-    const limit = parseInt(req.query.limit);
-
-    const exercises = await Exercise.find({});
-
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-
-    const results = {};
-
-    if (endIndex < exercises.length) {
-        results.next = {
-            page: page + 1,
-            limit: limit,
-        };
-    }
-
-    if (startIndex > 0) {
-        results.previous = {
-            page: page - 1,
-            limit: limit,
-        };
-    }
-   
-
-    results.results = exercises.slice(startIndex, endIndex);
-    res.json(results.results);
+    res.json(res.paginatedResults.results);
 }
