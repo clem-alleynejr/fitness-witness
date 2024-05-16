@@ -1,5 +1,4 @@
 const Workout = require("../../models/workout");
-const User = require("../../models/user");
 
 module.exports = {
   // unsavedWorkout,

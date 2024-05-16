@@ -14,7 +14,7 @@ export default function CreateWorkoutPage() {
     const [bodyPartFilter, setBodyPartFilter] = useState(null);
     const [equipmentFilter, setEquipmentFilter] = useState(null);
 
-    // Gets exercise choices from third party API
+    // Gets exercise choices from API
     useEffect(function () {
         async function getExerciseOptions() {
           try {
