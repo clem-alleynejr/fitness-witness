@@ -7,5 +7,5 @@ module.exports = {
 };
 
 async function index(req, res) {
-    res.json(res.paginatedResults.results);
+    res.json(res.filteredAndPaginatedResults.results);
 }

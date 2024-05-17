@@ -1,7 +1,8 @@
-function paginateResults(model) {
+function filterAndPaginateResults(model) {
     return async (req, res, next) => {
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 10;
+        const query = req.query.query || '';
     
         const startIndex = (page - 1) * limit;
         const endIndex = page * limit;
@@ -23,14 +24,14 @@ function paginateResults(model) {
         }
        
         try {
-            results.results = await model.find({}).limit(limit).skip(startIndex).exec();
-            res.paginatedResults = results;
+            results.results = await model.find({name: { $regex: query, $options: 'i' }}).limit(limit).skip(startIndex).exec();
+            res.filteredAndPaginatedResults = results;
             next()
-        } catch {
+        } catch (e) {
             res.status(500).json({ message: e.message })
         }
     
     }
 }
 
-module.exports = paginateResults;
+module.exports = filterAndPaginateResults;

@@ -1,10 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const exercisesCtrl = require("../../controllers/api/exercises");
-const paginateResults = require("../../src/utilities/paginationMiddleware");
+const filterAndPaginateResults = require("../../src/utilities/filterAndPaginateResults");
 const { Exercise } = require("../../models/exercise");
 
-router.get("/", paginateResults(Exercise), exercisesCtrl.index);
+router.get("/", filterAndPaginateResults(Exercise), exercisesCtrl.index);
 // router.get('/:id', exercisesCtrl.show);
 
 // router.post('/', exercisesCtrl.create);
