@@ -21,21 +21,34 @@ export default function CreateWorkoutPage() {
 
     // Gets exercise choices from API
     useEffect(function () {
+      const abortController = new AbortController();
+
         async function getExerciseOptions() {
+          setOptionsLoading(true);
+          setOptionsError(false);
             try {
                 const params = {query: query, page: page}
-                const exercises = await exercisesAPI.getAll(params);
+                const exercises = await exercisesAPI.getAll(params, abortController.signal);
                 console.log(exercises);
                 setExerciseOptions(exercises);
                 setOptionsLoading(false);
                 setOptionsError(false);
             } catch (error) {
+              if (error.name === 'AbortError') {
+                console.log('Fetch aborted');
+              } else {
                 console.log(error);
                 setOptionsLoading(false);
                 setOptionsError(true);
+              }
             }
         }
+
         getExerciseOptions();
+
+        return () => {
+          abortController.abort();
+        }
     }, [query, page]);
 
     return (
