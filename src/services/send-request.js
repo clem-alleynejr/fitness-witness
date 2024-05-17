@@ -1,6 +1,12 @@
 import { getToken } from "./users-service";
 
-export default async function sendRequest(url, method = 'GET', payload = null) {
+export default async function sendRequest(url, method = 'GET', payload = null, params = null) {
+    // Convert params object to query string and append to URL
+    if (params) {
+      const queryString = new URLSearchParams(params).toString();
+      url += `?${queryString}`;
+    }
+
     // Fetch accepts an options object as the 2nd argument
     // used to include a data payload, set headers, etc. 
     const options = { method };

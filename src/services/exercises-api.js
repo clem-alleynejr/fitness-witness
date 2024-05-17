@@ -2,6 +2,6 @@ import sendRequest from './send-request';
 
 const BASE_URL = '/api/exercises';
 
- export function getAll() {
-   return sendRequest(BASE_URL);
+ export function getAll(params) {
+   return sendRequest(BASE_URL, undefined, undefined, params);
  }
