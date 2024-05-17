@@ -7,11 +7,11 @@ export default async function sendRequest(url, method = 'GET', payload = null, p
       url += `?${queryString}`;
     }
 
-    
+  
     // Fetch accepts an options object as the 2nd argument
     // used to include a data payload, set headers, etc. 
     const options = { method };
-    
+
     if (abortControllerSignal) {
       options.signal = abortControllerSignal;
     }

@@ -4,20 +4,27 @@ import ExerciseList from "../../components/ExerciseList/ExerciseList";
 import * as exercisesAPI from "../../services/exercises-api";
 
 export default function CreateWorkoutPage() {
-    const [exerciseOptions, setExerciseOptions] = useState(null);
+    const [exerciseOptions, setExerciseOptions] = useState([]);
     const [optionsLoading, setOptionsLoading] = useState(true);
     const [optionsError, setOptionsError] = useState(false);
+    const [hasMoreOptions, setHasMoreOptions] = useState(false); 
     const [query, setQuery] = useState("");
     const [page, setPage] = useState(1);
-    const [exerciseSelections, setExerciseSelections] = useState(null);
-    const [workoutName, setWorkoutName] = useState(null);
     const [bodyPartFilter, setBodyPartFilter] = useState(null);
     const [equipmentFilter, setEquipmentFilter] = useState(null);
+
+    const [exerciseSelections, setExerciseSelections] = useState(null);
+    const [workoutName, setWorkoutName] = useState(null);
 
     function handleSearch(e) {
       setQuery(e.target.value);
       setPage(1);
     }
+
+    // Reset list of options when query changes
+    useEffect(function () {
+      setExerciseOptions([]);
+    }, [query])
 
     // Gets exercise choices from API
     useEffect(function () {
@@ -28,9 +35,12 @@ export default function CreateWorkoutPage() {
           setOptionsError(false);
             try {
                 const params = {query: query, page: page}
-                const exercises = await exercisesAPI.getAll(params, abortController.signal);
-                console.log(exercises);
-                setExerciseOptions(exercises);
+                const exerciseSubset = await exercisesAPI.getSubset(params, abortController.signal);
+                console.log(exerciseSubset.results);
+                setExerciseOptions(prevExercises => {
+                  return [...prevExercises, ...exerciseSubset.results]
+                });
+                setHasMoreOptions(exerciseSubset.results.length > 0)
                 setOptionsLoading(false);
                 setOptionsError(false);
             } catch (error) {
