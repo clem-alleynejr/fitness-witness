@@ -5,6 +5,7 @@ const filterAndPaginateResults = require("../../src/utilities/filterAndPaginateR
 const { Exercise } = require("../../models/exercise");
 
 router.get("/", filterAndPaginateResults(Exercise), exercisesCtrl.index);
+
 // router.get('/:id', exercisesCtrl.show);
 
 // router.post('/', exercisesCtrl.create);
