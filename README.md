@@ -23,7 +23,7 @@ Save and Organize Workouts: Save your custom workouts for easy access and organi
 
 | Screenshot | Description |
 |------------ | ------------|
-| <h3 align="center">Home Page</h3> | <img src="src/assets/images/HomePage.png" width="800">  
+| <h3 align="center">Home Page</h3> | <img src="src/assets/images/HomePagee.png" width="800">  
 
 
 # 👞 Next Steps
