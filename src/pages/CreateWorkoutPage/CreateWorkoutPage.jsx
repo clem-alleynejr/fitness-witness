@@ -7,7 +7,7 @@ export default function CreateWorkoutPage() {
     const [exerciseOptions, setExerciseOptions] = useState([]);
     const [optionsLoading, setOptionsLoading] = useState(true);
     const [optionsError, setOptionsError] = useState(false);
-    const [hasMoreOptions, setHasMoreOptions] = useState(false); 
+    const [hasMoreOptions, setHasMoreOptions] = useState(false);
     const [query, setQuery] = useState("");
     const [page, setPage] = useState(1);
     const [bodyPartFilter, setBodyPartFilter] = useState(null);
@@ -17,49 +17,58 @@ export default function CreateWorkoutPage() {
     const [workoutName, setWorkoutName] = useState(null);
 
     function handleSearch(e) {
-      setQuery(e.target.value);
-      setPage(1);
+        setQuery(e.target.value);
+        setPage(1);
     }
 
     // Reset list of options when query changes
-    useEffect(function () {
-      setExerciseOptions([]);
-    }, [query])
+    useEffect(
+        function () {
+            setExerciseOptions([]);
+        },
+        [query]
+    );
 
     // Gets exercise choices from API
-    useEffect(function () {
-      const abortController = new AbortController();
+    useEffect(
+        function () {
+            const abortController = new AbortController();
 
-        async function getExerciseOptions() {
-          setOptionsLoading(true);
-          setOptionsError(false);
-            try {
-                const params = {query: query, page: page}
-                const exerciseSubset = await exercisesAPI.getSubset(params, abortController.signal);
-                console.log(exerciseSubset.results);
-                setExerciseOptions(prevExercises => {
-                  return [...prevExercises, ...exerciseSubset.results]
-                });
-                setHasMoreOptions(exerciseSubset.results.length > 0)
-                setOptionsLoading(false);
+            async function getExerciseOptions() {
+                setOptionsLoading(true);
                 setOptionsError(false);
-            } catch (error) {
-              if (error.name === 'AbortError') {
-                console.log('Fetch aborted');
-              } else {
-                console.log(error);
-                setOptionsLoading(false);
-                setOptionsError(true);
-              }
+                try {
+                    const params = { query: query, page: page };
+                    const exerciseSubset = await exercisesAPI.getSubset(
+                        params,
+                        abortController.signal
+                    );
+                    console.log(exerciseSubset.results);
+                    setExerciseOptions((prevExercises) => {
+                        return [...prevExercises, ...exerciseSubset.results];
+                    });
+                    setHasMoreOptions(exerciseSubset.results.length > 0);
+                    setOptionsLoading(false);
+                    setOptionsError(false);
+                } catch (error) {
+                    if (error.name === "AbortError") {
+                        console.log("Fetch aborted");
+                    } else {
+                        console.log(error);
+                        setOptionsLoading(false);
+                        setOptionsError(true);
+                    }
+                }
             }
-        }
 
-        getExerciseOptions();
+            getExerciseOptions();
 
-        return () => {
-          abortController.abort();
-        }
-    }, [query, page]);
+            return () => {
+                abortController.abort();
+            };
+        },
+        [query, page]
+    );
 
     return (
         <div className="create-workout-page">
@@ -87,6 +96,7 @@ export default function CreateWorkoutPage() {
                         <input
                             type="text"
                             placeholder="Search Exercise"
+                            value={query}
                             onChange={handleSearch}
                         />
                         <button>All Filters</button>
