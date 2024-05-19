@@ -4,7 +4,7 @@ const { exerciseSchema } = require('./exercise');
 
 const userExerciseSchema = new Schema({
     exercise: exerciseSchema,
-    descriptions: { type: String },
+    description: { type: String },
     setQty: { type: String, default: '' },
     repQty: { type: String, default: '' },
 }, {

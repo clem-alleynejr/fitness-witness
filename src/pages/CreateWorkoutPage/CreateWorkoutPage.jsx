@@ -2,10 +2,12 @@ import "./CreateWorkoutPage.css";
 import { useEffect, useState, useRef, useCallback } from "react";
 import ExerciseList from "../../components/ExerciseList/ExerciseList";
 import * as exercisesAPI from "../../services/exercises-api";
+import CreateExerciseForm from "../../components/CreateExerciseForm/CreateExerciseForm";
 
 export default function CreateWorkoutPage() {
     const [exerciseSelections, setExerciseSelections] = useState(null);
-    const [workoutName, setWorkoutName] = useState('');
+    const [workoutName, setWorkoutName] = useState("");
+    const [showExerciseForm, setShowExerciseForm] = useState(false);
 
     const [exerciseOptions, setExerciseOptions] = useState([]);
     const [optionsLoading, setOptionsLoading] = useState(true);
@@ -105,19 +107,29 @@ export default function CreateWorkoutPage() {
                         onChange={(e) => setWorkoutName(e.target.value)}
                         required
                     />
-                    
-
-{
-    workoutName === '' && !exerciseSelections ? (
-        <div className="motivation">
-            <button type="button">Add Exercise</button>
-            <p>Yesterday, you said tomorrow. So</p>
-            <img src="https://media.tenor.com/kA8khAUYJZ8AAAAC/shia-labeouf.gif" alt="JUST DO IT" /> 
-        </div>
-    ) : (
-        <ExerciseList exercises={exerciseSelections} />
-    )
-}
+                    {!exerciseSelections ? (
+                        <div>
+                            <div className="motivation">
+                                <button
+                                    type="button"
+                                    onClick={() => setShowExerciseForm(true)}
+                                >
+                                    Add Custom Exercise
+                                </button>
+                                <p>Yesterday, you said tomorrow. So</p>
+                                <img
+                                    src="https://media.tenor.com/kA8khAUYJZ8AAAAC/shia-labeouf.gif"
+                                    alt="JUST DO IT"
+                                />
+                            </div>
+                            <CreateExerciseForm />
+                        </div>
+                    ) : (
+                        <ExerciseList exercises={exerciseSelections} />
+                    )}
+                    <div>
+                        <button className="save-button">Save Workout</button>
+                    </div>
                 </form>
                 <div className="exercise-select">
                     <h3>Exercise Selector</h3>

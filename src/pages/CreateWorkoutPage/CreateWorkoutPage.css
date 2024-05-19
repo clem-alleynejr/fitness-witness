@@ -143,5 +143,34 @@
     margin: 0 auto;
 }
 
+.create-workout-page .new-exercise-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.create-workout-page .new-exercise-form .sets-and-reps,
+.create-workout-page .new-exercise-form .body-part-and-target {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.create-workout-page .body-part-and-target input {
+    width: 125px;
+}
+
+.create-workout-page .sets-and-reps input {
+ width: 50px;
+}
+
+.create-workout-page .new-exercise-form button {
+    margin-top: 10px;
+}
+
+
+
 
 

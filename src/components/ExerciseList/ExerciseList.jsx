@@ -2,9 +2,7 @@ export default function ExerciseList({
     exercises,
     loading,
     error,
-    lastExerciseElementRef,
-    setQty,
-    repQty,
+    lastExerciseElementRef
 }) {
     return (
         <div className="exercise-list">
@@ -21,10 +19,9 @@ export default function ExerciseList({
                             className="exercise"
                         >
                             <h6>{exercise.name}</h6>
-                            <p>Target: {exercise.bodyPart}</p>
+                            <p>Body Part: {exercise.bodyPart}</p>
+                            <p>Target: {exercise.target}</p>
                             <p>Equipment: {exercise.equipment}</p>
-                            {setQty && <p>Sets: {exercise.setQty}</p>}
-                            {repQty && <p>Reps: {exercise.repQty}</p>}
                             {/* For Exercise Selector */}
                             <button>See More Details</button>
                             <button>Add to Workout</button>
@@ -34,10 +31,9 @@ export default function ExerciseList({
                     return (
                         <div key={index} className="exercise">
                             <h6>{exercise.name}</h6>
-                            <p>Target: {exercise.bodyPart}</p>
+                            <p>Body Part: {exercise.bodyPart}</p>
+                            <p>Target: {exercise.target}</p>
                             <p>Equipment: {exercise.equipment}</p>
-                            {setQty && <p>Sets: {exercise.setQty}</p>}
-                            {repQty && <p>Reps: {exercise.repQty}</p>}
                             {/* For Exercise Selector */}
                             <button>See More Details</button>
                             <button>Add to Workout</button>
