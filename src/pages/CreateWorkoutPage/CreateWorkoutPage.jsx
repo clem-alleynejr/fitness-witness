@@ -100,6 +100,7 @@ export default function CreateWorkoutPage() {
                     <input
                         type="text"
                         placeholder="Ex. Chest Day, Leg Day, etc."
+                        className="workout-name"
                         value={workoutName}
                         onChange={(e) => setWorkoutName(e.target.value)}
                         required
@@ -117,7 +118,6 @@ export default function CreateWorkoutPage() {
         <ExerciseList exercises={exerciseSelections} />
     )
 }
-
                 </form>
                 <div className="exercise-select">
                     <h3>Exercise Selector</h3>
