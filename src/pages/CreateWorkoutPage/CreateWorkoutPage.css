@@ -62,17 +62,11 @@
     margin: 0 auto;
 }
 
-.create-workout-page .loading.hidden {
-    display: none;
-}
 
 .create-workout-page .error {
     margin: 0 auto;
 }
 
-.create-workout-page .error.hidden {
-    display: none;
-}
 
 
 .create-workout-page .exercise-list {
@@ -122,6 +116,10 @@
     margin-top: 10px;
 }
 
+
+.create-workout-page .exercise-options .add-exercise-circular-button {
+    margin-left: 20px;
+}
 
 
 

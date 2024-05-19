@@ -8,6 +8,10 @@ export default function ExerciseList({
 }) {
     return (
         <div className="exercise-list">
+            <div className="add-exercise-circular-button">
+            <button>+</button>
+            <p>Add Exercise</p>
+            </div>
             {exercises.map((exercise, index) => {
                 if (index === exercises.length - 1) {
                     return (
@@ -41,14 +45,15 @@ export default function ExerciseList({
                     );
                 }
             })}
-            <div
-                className={`loading ${loading ? "" : "hidden"}`}
-            >
-                Loading...
-            </div>
-            <div className={`error ${error ? "" : "hidden"}`}>
-                Error Fetching Exercises
-            </div>
+            {loading && <div
+                className='loading'>
+                    <p>Loading...</p>
+                    </div>}
+            
+            {error && <div className="error">
+                <p>Error Fetching Exercises</p>
+                </div>}
+
         </div>
     );
 }
