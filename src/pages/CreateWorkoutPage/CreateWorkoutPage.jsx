@@ -1,9 +1,12 @@
 import "./CreateWorkoutPage.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 import ExerciseList from "../../components/ExerciseList/ExerciseList";
 import * as exercisesAPI from "../../services/exercises-api";
 
 export default function CreateWorkoutPage() {
+    const [exerciseSelections, setExerciseSelections] = useState(null);
+    const [workoutName, setWorkoutName] = useState(null);
+    
     const [exerciseOptions, setExerciseOptions] = useState([]);
     const [optionsLoading, setOptionsLoading] = useState(true);
     const [optionsError, setOptionsError] = useState(false);
@@ -13,8 +16,25 @@ export default function CreateWorkoutPage() {
     const [bodyPartFilter, setBodyPartFilter] = useState(null);
     const [equipmentFilter, setEquipmentFilter] = useState(null);
 
-    const [exerciseSelections, setExerciseSelections] = useState(null);
-    const [workoutName, setWorkoutName] = useState(null);
+    // will hold intersection (viewport) observer:
+    const observer = useRef();
+
+    // below callback will be invoked once last exercise of subset is rendered
+    const lastExerciseElementRef = useCallback(lastExerciseOfPage => {
+        // exit function if still in process of fetching new page of exercises
+        if (optionsLoading) return;
+        // disconnects current observer, stopping it from observing any elements. This takes affect when fetching pages after page 1
+        if (observer.current) observer.current.disconnect()
+        // create new intersection observer that changes the page if the first element of whatever it is observing isIntersecting (visible on screen). Page will only change if there are more exercises to be shown from the search query
+        observer.current = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && hasMoreOptions) {
+                setPage(prevPage => prevPage + 1);
+            }
+        })
+        // sets the last exercise of the page as the entry (entries[0]) for the newly created IntersectionObserver (stored as observer.current)
+        if (lastExerciseOfPage) observer.current.observe(lastExerciseOfPage)
+    // rerun if optionsLoading state changes or hasMoreOptions state changes
+    }, [optionsLoading, hasMoreOptions])  
 
     function handleSearch(e) {
         setQuery(e.target.value);
@@ -115,7 +135,7 @@ export default function CreateWorkoutPage() {
                             Error Fetching Exercises
                         </div>
                         {exerciseOptions && (
-                            <ExerciseList exercises={exerciseOptions} />
+                            <ExerciseList exercises={exerciseOptions} lastExerciseElementRef={lastExerciseElementRef} />
                         )}
                     </div>
                 </div>
