@@ -58,11 +58,19 @@
     flex-direction: column; */
 }
 
-.create-workout-page .options-loading.hidden {
+.create-workout-page .loading {
+    margin: 0 auto;
+}
+
+.create-workout-page .loading.hidden {
     display: none;
 }
 
-.create-workout-page .options-error.hidden {
+.create-workout-page .error {
+    margin: 0 auto;
+}
+
+.create-workout-page .error.hidden {
     display: none;
 }
 
@@ -77,6 +85,7 @@
     align-items: center;
     gap: 30px;
     padding: 10px;
+    min-height: 300px;
 }
 
 .create-workout-page .exercise {
