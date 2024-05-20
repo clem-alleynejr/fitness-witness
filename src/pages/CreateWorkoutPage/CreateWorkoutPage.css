@@ -33,8 +33,8 @@
 .create-workout-page .new-workout-form {
     /* grid-area: new-workout-form; */
     border: 1px solid white;
-    /* width: 100%;
-    height: 100%; */
+    width: 100%;
+    /* height: 100%;  */
     display: flex;
     flex-direction: column;
 }
@@ -116,9 +116,8 @@
 }
 
 
-.create-workout-page .exercise-options .add-exercise-circular-button {
+.create-workout-page .add-exercise-circular-button {
     margin-left: 20px;
-    display: none;
 }
 
 .create-workout-page .motivation button{
@@ -138,7 +137,8 @@
     min-height: 300px;
 }
 
-.create-workout-page .new-workout-form .workout-name {
+.create-workout-page .new-workout-form .workout-name,
+.create-workout-page .new-workout-form .workout-description {
     width: 70%;
     margin: 0 auto;
 }
@@ -146,7 +146,7 @@
 .create-workout-page .new-exercise-form {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     align-items: center;
 }
@@ -163,13 +163,24 @@
 }
 
 .create-workout-page .sets-and-reps input {
- width: 50px;
+ width: 75px;
 }
 
 .create-workout-page .new-exercise-form button {
     margin-top: 10px;
 }
 
+.new-exercise-form .back-button-and-title {
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
+
+.new-exercise-form .back-button-and-title svg {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
 
 
 

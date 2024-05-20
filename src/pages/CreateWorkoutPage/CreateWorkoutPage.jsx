@@ -5,8 +5,9 @@ import * as exercisesAPI from "../../services/exercises-api";
 import CreateExerciseForm from "../../components/CreateExerciseForm/CreateExerciseForm";
 
 export default function CreateWorkoutPage() {
-    const [exerciseSelections, setExerciseSelections] = useState(null);
+    const [exerciseSelections, setExerciseSelections] = useState([]);
     const [workoutName, setWorkoutName] = useState("");
+    const [workoutDescription, setWorkoutDescription] = useState("");
     const [showExerciseForm, setShowExerciseForm] = useState(false);
 
     const [exerciseOptions, setExerciseOptions] = useState([]);
@@ -15,6 +16,7 @@ export default function CreateWorkoutPage() {
     const [hasMoreOptions, setHasMoreOptions] = useState(false);
     const [query, setQuery] = useState("");
     const [page, setPage] = useState(1);
+
     const [bodyPartFilter, setBodyPartFilter] = useState(null);
     const [equipmentFilter, setEquipmentFilter] = useState(null);
 
@@ -45,6 +47,15 @@ export default function CreateWorkoutPage() {
     function handleSearch(e) {
         setQuery(e.target.value);
         setPage(1);
+    }
+
+    function handleAddCustomExerciseToWorkout(exercise) {
+        setExerciseSelections([exercise, ...exerciseSelections]);
+        console.log(exerciseSelections);
+    }
+
+    function handleShowExerciseForm() {
+        setShowExerciseForm(true);
     }
 
     // Reset list of options when query changes
@@ -97,6 +108,7 @@ export default function CreateWorkoutPage() {
         <div className="create-workout-page">
             <h1 className="page-title">Create Workout</h1>
             <div className="workout-creator">
+                
                 <form className="new-workout-form">
                     <label>Workout Name:</label>
                     <input
@@ -107,8 +119,15 @@ export default function CreateWorkoutPage() {
                         onChange={(e) => setWorkoutName(e.target.value)}
                         required
                     />
-                    {!exerciseSelections ? (
-                        <div>
+                    <label>Description:</label>
+                    <input
+                        type="text"
+                        placeholder="Ex. Intense Chest Workout"
+                        className="workout-description"
+                        value={workoutDescription}
+                        onChange={(e) => setWorkoutDescription(e.target.value)}
+                    />
+                    {exerciseSelections.length === 0 && !showExerciseForm ? (
                             <div className="motivation">
                                 <button
                                     type="button"
@@ -122,15 +141,27 @@ export default function CreateWorkoutPage() {
                                     alt="JUST DO IT"
                                 />
                             </div>
-                            <CreateExerciseForm />
-                        </div>
                     ) : (
-                        <ExerciseList exercises={exerciseSelections} />
+                        <>
+                        {!showExerciseForm && 
+                            <ExerciseList 
+                            exercises={exerciseSelections} editableList={true}
+                            handleShowExerciseForm={
+                                handleShowExerciseForm
+                            } 
+                            />}
+                        </>
                     )}
-                    <div>
+                    {!showExerciseForm && <div>
                         <button className="save-button">Save Workout</button>
-                    </div>
+                    </div>}
                 </form>
+                {showExerciseForm && <CreateExerciseForm
+                    handleAddCustomExerciseToWorkout={
+                        handleAddCustomExerciseToWorkout
+                    }
+                    setShowExerciseForm={setShowExerciseForm}
+                />}
                 <div className="exercise-select">
                     <h3>Exercise Selector</h3>
                     <div className="filters">
