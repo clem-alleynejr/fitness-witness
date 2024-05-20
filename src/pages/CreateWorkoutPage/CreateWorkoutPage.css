@@ -62,17 +62,11 @@
     margin: 0 auto;
 }
 
-.create-workout-page .loading.hidden {
-    display: none;
-}
 
 .create-workout-page .error {
     margin: 0 auto;
 }
 
-.create-workout-page .error.hidden {
-    display: none;
-}
 
 
 .create-workout-page .exercise-list {
@@ -99,7 +93,6 @@
 }
 
 
-
 .create-workout-page .exercise-select > h3 {
     margin-top: 30px;
     margin-bottom: 0;
@@ -121,6 +114,62 @@
 .create-workout-page .filters h3 {
     margin-top: 10px;
 }
+
+
+.create-workout-page .exercise-options .add-exercise-circular-button {
+    margin-left: 20px;
+    display: none;
+}
+
+.create-workout-page .motivation button{
+    margin-bottom: 5px;
+}
+
+.create-workout-page .motivation p {
+    margin-bottom: 5px;
+    margin-top: 9px;
+}
+
+.create-workout-page .motivation {
+    border: 1px solid white;
+    overflow: scroll;
+    width: calc(100vw - 32px);
+    margin: 10px auto auto;
+    min-height: 300px;
+}
+
+.create-workout-page .new-workout-form .workout-name {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.create-workout-page .new-exercise-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.create-workout-page .new-exercise-form .sets-and-reps,
+.create-workout-page .new-exercise-form .body-part-and-target {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.create-workout-page .body-part-and-target input {
+    width: 125px;
+}
+
+.create-workout-page .sets-and-reps input {
+ width: 50px;
+}
+
+.create-workout-page .new-exercise-form button {
+    margin-top: 10px;
+}
+
 
 
 
