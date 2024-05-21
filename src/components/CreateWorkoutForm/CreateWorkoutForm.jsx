@@ -13,6 +13,7 @@ export default function CreateWorkoutForm({
     showExerciseForm,
     setShowExerciseForm,
     handleShowExerciseForm,
+    handleDeleteCustomExercise
 }) {
     const navigate = useNavigate();
 
@@ -71,6 +72,7 @@ export default function CreateWorkoutForm({
                             exercises={exerciseSelections}
                             editableList={true}
                             handleShowExerciseForm={handleShowExerciseForm}
+                            handleDeleteCustomExercise={handleDeleteCustomExercise}
                         />
                     )}
                 </>

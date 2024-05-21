@@ -55,6 +55,15 @@ export default function CreateWorkoutPage() {
         setExerciseSelections([exercise, ...exerciseSelections]);
     }
 
+    function handleDeleteCustomExercise(index) {
+        console.log(index)
+        setExerciseSelections((prevSelections) => 
+            prevSelections.filter((_, i) => i !== index)
+        );
+        console.log('workout deleted');
+        console.log(workoutDescription)
+    }
+
     function handleShowExerciseForm() {
         setShowExerciseForm(true);
     }
@@ -118,6 +127,7 @@ export default function CreateWorkoutPage() {
                     showExerciseForm={showExerciseForm}
                     setShowExerciseForm={setShowExerciseForm}
                     handleShowExerciseForm={handleShowExerciseForm}
+                    handleDeleteCustomExercise={handleDeleteCustomExercise}
                 />
 
                 {showExerciseForm && (

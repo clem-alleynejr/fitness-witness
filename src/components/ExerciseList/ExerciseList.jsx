@@ -5,6 +5,7 @@ export default function ExerciseList({
     lastExerciseElementRef,
     editableList = false,
     handleShowExerciseForm,
+    handleDeleteCustomExercise
 }) {
     return (
         <div className="exercise-list">
@@ -80,6 +81,7 @@ export default function ExerciseList({
                                     <p>Weight: {exercise.weight}</p>
                                     <button>See More Details</button>
                                     <button>Edit</button>
+                                    <button type="button" onClick={() => handleDeleteCustomExercise(index)}>Delete</button>
                                 </div>
                             );
                         } else {
@@ -98,6 +100,7 @@ export default function ExerciseList({
                                     <p>Weight: {exercise.weight}</p>
                                     <button>See More Details</button>
                                     <button>Edit</button>
+                                    <button type="button" onClick={() => handleDeleteCustomExercise(index)}>Delete</button>
                                 </div>
                             );
                         }
