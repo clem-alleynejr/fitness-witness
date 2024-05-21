@@ -57,7 +57,7 @@ export default function ExerciseList({
                         onClick={handleShowExerciseForm}
                     >
                         <button type="button">+</button>
-                        <p>Add Exercise</p>
+                        <p>Add Custom Exercise</p>
                     </div>
                     {exercises.map((exercise, index) => {
                         if (index === exercises.length - 1) {
@@ -77,6 +77,7 @@ export default function ExerciseList({
                                     </p>
                                     <p>Sets: {exercise.setQty}</p>
                                     <p>Reps: {exercise.repQty}</p>
+                                    <p>Weight: {exercise.weight}</p>
                                     <button>See More Details</button>
                                     <button>Edit</button>
                                 </div>
@@ -94,6 +95,7 @@ export default function ExerciseList({
                                     </p>
                                     <p>Sets: {exercise.setQty}</p>
                                     <p>Reps: {exercise.repQty}</p>
+                                    <p>Weight: {exercise.weight}</p>
                                     <button>See More Details</button>
                                     <button>Edit</button>
                                 </div>

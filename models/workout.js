@@ -7,6 +7,7 @@ const userExerciseSchema = new Schema({
     description: { type: String, default: '' },
     setQty: { type: String, default: '' },
     repQty: { type: String, default: '' },
+    weight: { type: String, default: '' }
 }, {
     timestamps: true
 })
