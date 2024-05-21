@@ -1,6 +1,8 @@
 import React from "react";
 import ExerciseList from "../ExerciseList/ExerciseList";
 import * as WorkoutsAPI from "../../services/workouts-api";
+import { useNavigate } from "react-router-dom";
+
 
 export default function CreateWorkoutForm({
     workoutName,
@@ -12,6 +14,8 @@ export default function CreateWorkoutForm({
     setShowExerciseForm,
     handleShowExerciseForm,
 }) {
+    const navigate = useNavigate();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -21,6 +25,7 @@ export default function CreateWorkoutForm({
                 exercises: exerciseSelections,
             });
             console.log("Workout saved:", response.data);
+            navigate('/workouts');
         } catch (error) {
             console.error("Error saving workout:", error);
         }
