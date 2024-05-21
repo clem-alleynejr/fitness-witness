@@ -117,6 +117,7 @@ export default function CreateWorkoutPage() {
     return (
         <div className="create-workout-page">
             <h1 className="page-title">Create Workout</h1>
+            <h6>Add exercises from the catalog. If you can't find what you're looking for, add a custom exercise! </h6>
             <div className="workout-creator">
                 <CreateWorkoutForm
                     workoutName={workoutName}
@@ -139,7 +140,7 @@ export default function CreateWorkoutPage() {
                     />
                 )}
                 <div className="exercise-select">
-                    <h3>Exercise Selector</h3>
+                    <h3>Exercise Catalogue</h3>
                     <div className="filters">
                         <h3>Filters</h3>
                     </div>
