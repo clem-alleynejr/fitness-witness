@@ -37,10 +37,15 @@ async function show(req, res) {
 
 async function create(req, res) {
   const userID = req.user._id;
-  const { name, exercises } = req.body;
+  const { name, description, exercises } = req.body;
   try {
     // Create new workout
-    const newWorkout = await Workout.create({ name, exercises, userID });
+    const newWorkout = await Workout.create({ 
+      name, 
+      description,
+      exercises, 
+      userID 
+    });
 
     res.json(newWorkout);
   } catch (error) {

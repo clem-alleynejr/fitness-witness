@@ -51,8 +51,8 @@ export default function CreateWorkoutPage() {
     }
 
     function handleAddCustomExerciseToWorkout(exercise) {
+        console.log(exercise);
         setExerciseSelections([exercise, ...exerciseSelections]);
-        console.log(exerciseSelections);
     }
 
     function handleShowExerciseForm() {

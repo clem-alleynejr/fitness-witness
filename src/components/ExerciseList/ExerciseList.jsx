@@ -64,12 +64,12 @@ export default function ExerciseList({
                                     ref={lastExerciseElementRef}
                                     className="exercise"
                                 >
-                                    <h6>{exercise.name}</h6>
-                                    <p>Body Part: {exercise.bodyPart}</p>
-                                    <p>Target: {exercise.target}</p>
-                                    <p>Equipment: {exercise.equipment}</p>
-                                    <p>Sets: {exercise.sets}</p>
-                                    <p>Reps: {exercise.reps}</p>
+                                    <h6>{exercise.exercise.name}</h6>
+                                    <p>Body Part: {exercise.exercise.bodyPart}</p>
+                                    <p>Target: {exercise.exercise.target}</p>
+                                    <p>Equipment: {exercise.exercise.equipment}</p>
+                                    <p>Sets: {exercise.setQty}</p>
+                                    <p>Reps: {exercise.repQty}</p>
                                     <button>See More Details</button>
                                     <button>Edit</button>
                                 </div>
@@ -77,12 +77,12 @@ export default function ExerciseList({
                         } else {
                             return (
                                 <div key={index} className="exercise">
-                                    <h6>{exercise.name}</h6>
-                                    <p>Body Part: {exercise.bodyPart}</p>
-                                    <p>Target: {exercise.target}</p>
-                                    <p>Equipment: {exercise.equipment}</p>
-                                    <p>Sets: {exercise.sets}</p>
-                                    <p>Reps: {exercise.reps}</p>
+                                    <h6>{exercise.exercise.name}</h6>
+                                    <p>Body Part: {exercise.exercise.bodyPart}</p>
+                                    <p>Target: {exercise.exercise.target}</p>
+                                    <p>Equipment: {exercise.exercise.equipment}</p>
+                                    <p>Sets: {exercise.setQty}</p>
+                                    <p>Reps: {exercise.repQty}</p>
                                     <button>See More Details</button>
                                     <button>Edit</button>
                                 </div>

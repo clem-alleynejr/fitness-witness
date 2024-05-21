@@ -16,18 +16,21 @@ export default function CreateExerciseForm({ handleAddCustomExerciseToWorkout,
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const newExercise = {
-            name: exerciseName,
-            bodyPart: bodyPart,
-            target: target,
-            equipment: equipment,
-            description: description,
-            sets: sets,
-            reps: reps,
+        const newUserExercise = {
+            exercise: {
+                bodyPart,
+                equipment,
+                name: exerciseName,
+                target
+            },
+            description,
+            setQty: sets,
+            repQty: reps
         };
 
-        handleAddCustomExerciseToWorkout(newExercise);
-        setShowExerciseForm(false)
+        handleAddCustomExerciseToWorkout(newUserExercise);
+        console.log(newUserExercise);
+        setShowExerciseForm(false);
 
         // // Clear the form inputs after submission
         // setExerciseName("");
