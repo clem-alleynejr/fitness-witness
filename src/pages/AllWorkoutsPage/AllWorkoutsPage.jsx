@@ -10,7 +10,7 @@ export default function AllWorkoutsPage() {
   useEffect(function () {
     async function getWorkouts() {
       const workouts = await workoutsAPI.getAll();
-      setWorkouts(workouts);
+      setWorkouts(workouts.reverse());
     }
     getWorkouts();
   }, []);
