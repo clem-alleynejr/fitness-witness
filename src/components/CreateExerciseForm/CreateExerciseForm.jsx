@@ -12,22 +12,27 @@ export default function CreateExerciseForm({ handleAddCustomExerciseToWorkout,
     const [description, setDescription] = useState("");
     const [sets, setSets] = useState("");
     const [reps, setReps] = useState("");
+    const [weight, setWeight] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const newExercise = {
-            name: exerciseName,
-            bodyPart: bodyPart,
-            target: target,
-            equipment: equipment,
-            description: description,
-            sets: sets,
-            reps: reps,
+        const newUserExercise = {
+            exercise: {
+                bodyPart,
+                equipment,
+                name: exerciseName,
+                target
+            },
+            description,
+            setQty: sets,
+            repQty: reps,
+            weight: weight
         };
 
-        handleAddCustomExerciseToWorkout(newExercise);
-        setShowExerciseForm(false)
+        handleAddCustomExerciseToWorkout(newUserExercise);
+        console.log(newUserExercise);
+        setShowExerciseForm(false);
 
         // // Clear the form inputs after submission
         // setExerciseName("");
@@ -91,6 +96,11 @@ export default function CreateExerciseForm({ handleAddCustomExerciseToWorkout,
                     />
                 </div>
             </div>
+            <label>Weight:</label>
+            <input 
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+            />
             <label>Description / Instructions:</label>
             <input
                 value={description}

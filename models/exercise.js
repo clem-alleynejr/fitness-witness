@@ -3,11 +3,12 @@ const Schema = mongoose.Schema;
 
 
 const exerciseSchema = new Schema({
+    bodyPart: {type: String, default: ''},
+    equipment: {type: String, default: ''},
+    gifUrl: {type: String, default: ''},
     name: {
         type: String, required: true
     },
-    bodyPart: {type: String, default: ''},
-    equipment: {type: String, default: ''},
     target: {type: String, default: ''}
 }, {
     timestamps: true
