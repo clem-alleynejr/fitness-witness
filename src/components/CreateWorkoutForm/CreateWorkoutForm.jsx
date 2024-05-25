@@ -13,6 +13,7 @@ export default function CreateWorkoutForm({
     showExerciseForm,
     setShowExerciseForm,
     handleShowExerciseForm,
+    handleDeleteCustomExercise
 }) {
     const navigate = useNavigate();
 
@@ -42,7 +43,7 @@ export default function CreateWorkoutForm({
                 onChange={(e) => setWorkoutName(e.target.value)}
                 required
             />
-            <label>Description:</label>
+            <label>Workout Description:</label>
             <input
                 type="text"
                 placeholder="Ex. Intense Chest Workout"
@@ -71,6 +72,7 @@ export default function CreateWorkoutForm({
                             exercises={exerciseSelections}
                             editableList={true}
                             handleShowExerciseForm={handleShowExerciseForm}
+                            handleDeleteCustomExercise={handleDeleteCustomExercise}
                         />
                     )}
                 </>

@@ -58,6 +58,7 @@ export default function CreateExerciseForm({ handleAddCustomExerciseToWorkout,
             <input
                 value={exerciseName}
                 onChange={(e) => setExerciseName(e.target.value)}
+                placeholder="Ex. Interval Sprints"
             />
             <div className="body-part-and-target">
                 <div className="body-part">
@@ -101,7 +102,7 @@ export default function CreateExerciseForm({ handleAddCustomExerciseToWorkout,
             value={weight}
             onChange={(e) => setWeight(e.target.value)}
             />
-            <label>Description / Instructions:</label>
+            <label>Instructions:</label>
             <input
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
